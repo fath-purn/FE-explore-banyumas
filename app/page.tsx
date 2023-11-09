@@ -1,11 +1,75 @@
-import Image from "next/image";
-import Icon from "@mdi/react";
-import { mdiAccount } from "@mdi/js";
+import TopBaner from "@/app/ui/topBaner";
+import Search from "@/app/ui/search";
+import DataBanyumas from "@/app/ui/dataBanyumas";
+import CardImage from "./ui/cardImage";
+import Link from "next/link";
 
-export default function Home() {
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+  };
+}) {
+  const query = searchParams?.query || ""; // lanjutkan ke database
+
   return (
-    <main className="bg-black">
-      <p>hai</p>
+    <main className="h-[10020px]">
+      <div className="h-[401px]">
+        <TopBaner />
+      </div>
+      <div className="w-full relative bottom-[1.5rem]">
+        <div className="flex items-center justify-between m-auto w-[95%] md:w-[80%]">
+          <Search placeholder="Search invoices..." />
+        </div>
+      </div>
+
+      {/* Selamat datang */}
+      <div className="w-full mt-10">
+        <div className="flex justify-center m-auto w-[95%] md:w-[85%]">
+          <h2 className="text-zinc-950 text-3xl font-bold text-center mb-5">
+            Selamat Datang di BANYUMAS!
+          </h2>
+        </div>
+        <div className="flex flex-col md:flex-row items-center justify-center m-auto w-[95%] md:w-[85%] gap-4">
+          <CardImage />
+        </div>
+        <div className="flex flex-col items-center justify-center m-auto w-[95%] md:w-[85%]">
+          <h2 className="text-zinc-950 text-3xl font-bold text-center mt-10 mb-5">
+            Seputar Banyumas
+          </h2>
+          <p className="text-center text-stone-700 text-base font-normal w-[90%] md:w-[65%]">
+            Kabupaten Banyumas, yang terletak di Provinsi Jawa Tengah,
+            Indonesia, adalah kabupaten dengan destinasi wisata yang menawarkan
+            kekayaan budaya, keindahan alam, dan warisan sejarah yang
+            menakjubkan. Beragam wisata di Banyumas menjadikan kota ini maju
+            dibidang perhotelan
+          </p>
+          <Link
+            href="/"
+            className="text-neutral-500 text-base font-medium mt-5 underline"
+          >
+            Selengkapnya
+          </Link>
+          <div className="flex items-center justify-center m-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 m-auto w-[95%] md:w-full gap-4">
+              <DataBanyumas />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Hotel terbaik di Banyumas */}
+      <div className="w-full mt-10">
+        <div className="flex justify-between items-center m-auto w-[95%] md:w-[85%]">
+          <h3 className="text-black text-[1.18rem] md:text-2xl font-semibold">
+            Hotel Terbaik di Banyumas
+          </h3>
+          <Link href="/" className="text-neutral-500 text-base-md md:text-xl font-medium">
+            Lihat semua
+          </Link>
+        </div>
+      </div>
     </main>
   );
 }
