@@ -3,6 +3,8 @@ import Search from "@/app/ui/search";
 import DataBanyumas from "@/app/ui/dataBanyumas";
 import CardImage from "./ui/cardImage";
 import Link from "next/link";
+import CardHotel from "@/app/ui/cardHotel";
+import CardWisata from "./ui/cardWisata";
 
 export default async function Page({
   searchParams,
@@ -68,6 +70,23 @@ export default async function Page({
           <Link href="/" className="text-neutral-500 text-base-md md:text-xl font-medium">
             Lihat semua
           </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
+          <CardHotel />
+        </div>
+      </div>
+      {/* Hotel terbaik di Banyumas */}
+      <div className="w-full mt-10">
+        <div className="flex justify-between items-center m-auto w-[95%] md:w-[85%]">
+          <h3 className="text-black text-[1.18rem] md:text-2xl font-semibold">
+            Wisata Terbaik di Banyumas
+          </h3>
+          <Link href="/" className="text-neutral-500 text-base-md md:text-xl font-medium">
+            Lihat semua
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
+          <CardWisata />
         </div>
       </div>
     </main>

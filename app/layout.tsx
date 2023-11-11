@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { poppins } from '@/app/ui/fonts'
 import './globals.css'
-import Navbar from './ui/navbar'
+import Navbar from './ui/navbar';
 
 export const metadata: Metadata = {
   title: {

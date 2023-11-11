@@ -15,6 +15,8 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import {Logo} from "@/app/ui/svg-image";
+import { useMediaQuery } from '@mui/material';
 
 
 const links = [
@@ -47,16 +49,18 @@ const links = [
 
 export default function Navlink() {
   const pathname = usePathname();
+  const isScreenAbove768px = useMediaQuery('(max-width:880px)');
 
   return (
     <>
+      {isScreenAbove768px && <Logo /> }
       {links.map((link) => {
         return (
           <Link
             key={link.name}
             href={link.href}
             className={clsx(
-              "flex h-[48px] grow items-center md:mr-4 justify-center gap-2 bg-white p-3 text-sm font-medium hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
+              "flex h-[48px] grow items-center justify-center gap-2 bg-white p-3 text-sm font-medium hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
               {
                 "text-black": pathname !== link.href,
                 "text-blue-600": pathname === link.href,
