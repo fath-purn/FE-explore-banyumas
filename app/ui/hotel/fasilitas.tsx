@@ -7,9 +7,12 @@ import {
   mdiRoomService,
   mdiFood,
   mdiFoodVariant,
+  mdiCar,
+  mdiClockOutline,
+  mdiBed,
 } from "@mdi/js";
 
-type FasilitasProps = {
+type Props = {
   fasilitas: {
     wifi: boolean;
     bar: boolean;
@@ -19,7 +22,7 @@ type FasilitasProps = {
   };
 };
 
-const fasilitasList = [
+const fasilitasHotel = [
   {
     icon: mdiWifi,
     text: "Free Wi-Fi",
@@ -47,10 +50,10 @@ const fasilitasList = [
   },
 ];
 
-export default function Fasilitas({ fasilitas }: FasilitasProps): JSX.Element {
+export default function Fasilitas({ fasilitas }: Props): JSX.Element {
   return (
     <>
-      {fasilitasList.map((item, index) => (
+      {fasilitasHotel.map((item, index) => (
         <div key={index} className="flex items-center mt-1">
           <Icon
             path={item.icon}

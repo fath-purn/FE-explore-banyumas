@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import TopBaner from "@/app/ui/topBaner";
 
 export const metadata: Metadata = {
   title: "Hotel",
 };
 
-export default function about() {
+export default function hotel() {
     return (
-        <div className="">
-            <h1>Hotel</h1>
-        </div>
+        <main className="h-[10000px]">
+      <div className="h-[617px]">
+        <TopBaner />
+      </div>
+    </main>
     )
 }
