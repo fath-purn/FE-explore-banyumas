@@ -43,18 +43,15 @@ export default function CardWisata() {
     <>
       {wisata.map((wisata, index) => {
         return (
-          <div
-            key={index}
-            className="flex flex-row justify-between md:flex-col bg-white rounded-lg shadow-md mt-3 md:max-w-[237px]"
-          >
+          <div key={index} className="flex flex-row justify-start md:justify-between md:flex-col bg-white rounded-lg shadow-md mt-3 md:max-w-[237px]">
             <Image
               src={wisata.src}
               alt={wisata.nama}
               width={237}
               height={217}
-              className="rounded-lg object-cover"
+              className="rounded-lg object-cover max-w-[50%] md:max-w-full"
             />
-            <div className="flex items-center justify-center my-3 ml-1 md:ml-0 w-full">
+            <div className="flex items-center justify-center my-3 ml-1 md:ml-0 w-[50%] md:w-full">
               <div className="w-[90%]">
                 <h3 className="text-black text-xl font-medium mb-3">
                   {wisata.nama}

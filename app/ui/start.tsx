@@ -9,7 +9,7 @@ export default function start({ jumlahBintang }: { jumlahBintang: number }): JSX
                     <Icon
                         key={index}
                         path={mdiStar}
-                        size={0.8}
+                        size={0.7}
                         color="#FFC107"
                         className="inline"
                     />

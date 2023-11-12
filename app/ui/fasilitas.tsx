@@ -50,25 +50,23 @@ const fasilitasList = [
 export default function Fasilitas({ fasilitas }: FasilitasProps): JSX.Element {
   return (
     <>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 items-center justify-between mt-3 sm:w-[70%] md:w-full">
-        {fasilitasList.map((item, index) => (
-          <div key={index} className="flex items-center mt-1">
-            <Icon
-              path={item.icon}
-              size={0.8}
-              color={item.active(fasilitas) ? "#FE6984" : "#E0E0E0"}
-              className="inline mr-2"
-            />
-            <p
-              className={clsx("text-neutral-500 text-[8px] font-light", {
-                "-": !item.active(fasilitas),
-              })}
-            >
-              {item.active(fasilitas) ? item.text : "-"}
-            </p>
-          </div>
-        ))}
-      </div>
+      {fasilitasList.map((item, index) => (
+        <div key={index} className="flex items-center mt-1">
+          <Icon
+            path={item.icon}
+            size={0.8}
+            color={item.active(fasilitas) ? "#FE6984" : "#E0E0E0"}
+            className="inline mr-2"
+          />
+          <p
+            className={clsx("text-neutral-500 text-[8px] font-light", {
+              "-": !item.active(fasilitas),
+            })}
+          >
+            {item.active(fasilitas) ? item.text : "-"}
+          </p>
+        </div>
+      ))}
     </>
   );
 }

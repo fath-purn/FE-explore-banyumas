@@ -5,6 +5,7 @@ import CardImage from "./ui/cardImage";
 import Link from "next/link";
 import CardHotel from "@/app/ui/cardHotel";
 import CardWisata from "./ui/cardWisata";
+import Footer from "./ui/footer";
 
 export default async function Page({
   searchParams,
@@ -16,7 +17,7 @@ export default async function Page({
   const query = searchParams?.query || ""; // lanjutkan ke database
 
   return (
-    <main className="h-[10020px]">
+    <main>
       <div className="h-[401px]">
         <TopBaner />
       </div>
@@ -89,6 +90,7 @@ export default async function Page({
           <CardWisata />
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
