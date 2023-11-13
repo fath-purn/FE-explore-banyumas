@@ -7,6 +7,145 @@ import CardHotel from "@/app/ui/hotel/cardHotel";
 import CardWisata from "./ui/wisata/cardWisata";
 import Footer from "./ui/footer";
 
+// ganti dengan api
+export const dataHotel = [
+  {
+    id: "0",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+  {
+    id: "1",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+  {
+    id: "2",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+  {
+    id: "3",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+  {
+    id: "4",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+];
+
+// ganti dengan api
+export const dataWisata = [
+  {
+    id: "0",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+  {
+    id: "1",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+  {
+    id: "2",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+  {
+    id: "3",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+  {
+    id: "4",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+];
+
+
 export default async function Page({
   searchParams,
 }: {
@@ -73,7 +212,7 @@ export default async function Page({
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardHotel />
+          <CardHotel hotel={dataHotel} />
         </div>
       </div>
       {/* Hotel terbaik di Banyumas */}
@@ -87,7 +226,7 @@ export default async function Page({
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardWisata />
+          <CardWisata wisata={dataWisata} />
         </div>
       </div>
       <Footer />

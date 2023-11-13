@@ -1,84 +1,28 @@
 import Image from "next/image";
 import Icon from "@mdi/react";
 import { mdiCityVariant } from "@mdi/js";
-import Start from "../start";
+import Start from "../star";
 import Fasilitas from "./fasilitas";
 import { CardButton } from "@/app/ui/button";
 
-const hotel = [
-  {
-    id: "0",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    start: 5,
+interface HotelProps {
+  hotel: {
+    id: string;
+    nama: string;
+    src: string;
+    start: number;
     fasilitas: {
-      wifi: true,
-      bar: false,
-      roomService: true,
-      breakfast: true,
-      restaurant: true,
-    },
-    price: 500000,
-  },
-  {
-    id: "1",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    start: 5,
-    fasilitas: {
-      wifi: true,
-      bar: false,
-      roomService: true,
-      breakfast: true,
-      restaurant: true,
-    },
-    price: 500000,
-  },
-  {
-    id: "2",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    start: 5,
-    fasilitas: {
-      wifi: true,
-      bar: false,
-      roomService: true,
-      breakfast: true,
-      restaurant: true,
-    },
-    price: 500000,
-  },
-  {
-    id: "3",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    start: 5,
-    fasilitas: {
-      wifi: true,
-      bar: false,
-      roomService: true,
-      breakfast: true,
-      restaurant: true,
-    },
-    price: 500000,
-  },
-  {
-    id: "4",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    start: 5,
-    fasilitas: {
-      wifi: true,
-      bar: false,
-      roomService: true,
-      breakfast: true,
-      restaurant: true,
-    },
-    price: 500000,
-  },
-];
+      wifi: boolean;
+      bar: boolean;
+      roomService: boolean;
+      breakfast: boolean;
+      restaurant: boolean;
+    };
+    price: number;
+  }[];
+}
 
-export default function CardHotel() {
+export default function CardHotel({hotel}: HotelProps) {
   return (
     <>
       {hotel.map((hotel, index) => {

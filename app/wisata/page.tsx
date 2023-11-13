@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   title: "Wisata",
 };
 
-export const productData = [
+// ganti dengan api
+export const dataUlasan = [
   {
     id: 0,
     user: "Ferina Nur W",
@@ -69,6 +70,70 @@ export const productData = [
   },
 ];
 
+// ganti dengan api
+export const dataWisata = [
+  {
+    id: "0",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+  {
+    id: "1",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+  {
+    id: "2",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+  {
+    id: "3",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+  {
+    id: "4",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+];
+
 export default function wisata() {
   return (
     <main>
@@ -95,7 +160,7 @@ export default function wisata() {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardWisata />
+          <CardWisata wisata={dataWisata} />
         </div>
       </div>
 
@@ -113,7 +178,7 @@ export default function wisata() {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardWisata />
+          <CardWisata wisata={dataWisata} />
         </div>
       </div>
       {/* Ulasan */}
@@ -121,17 +186,17 @@ export default function wisata() {
         <hr className="bg-black" />
         <div className="flex items-center mt-8 justify-center ">
           <div className="mr-5 flex flex-col items-end">
-            <span className="w-[55px] h-[2px] bg-rose-500 hidden md:block"></span>
-            <span className="w-[85px] h-[2px] bg-rose-500 hidden md:block mt-1"></span>
+            <span className="w-[55px] h-[2px] bg-[#FE6984] hidden md:block"></span>
+            <span className="w-[85px] h-[2px] bg-[#FE6984] hidden md:block mt-1"></span>
           </div>
           <h2 className="text-black text-[25px] font-semibold">Ulasan</h2>
           <div className="ml-5">
-            <span className="w-[55px] h-[2px] bg-rose-500 hidden md:block"></span>
-            <span className="w-[85px] h-[2px] bg-rose-500 hidden md:block mt-1"></span>
+            <span className="w-[55px] h-[2px] bg-[#FE6984] hidden md:block"></span>
+            <span className="w-[85px] h-[2px] bg-[#FE6984] hidden md:block mt-1"></span>
           </div>
         </div>
         <div className="">
-          <CardUlasan productData={productData} />
+          <CardUlasan dataUlasan={dataUlasan} />
         </div>
       </div>
       <Footer />
