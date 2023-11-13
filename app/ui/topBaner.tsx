@@ -80,29 +80,29 @@ export default function Background() {
         <h1 className="text-white font-bold text-5xl md:text-[50px] leading-relaxed text-center w-[90%] sm:w-full">
           {images[0].title}
         </h1>
-        {pathname === "/" && (
+        {pathname === "/" || pathname === '/destinasi' ? (
           <p className="text-white text-2xl md:text-[30px] text-center w-[90%] sm:w-full my-6 flex justify-center space-x-2 gap-8 items-center">
             <span
               className={clsx(
-                "w-[86px] h-[5px] bg-white relative hidden md:block",
+                "w-[86px] h-[5px] bg-white relative ",
                 {
-                  block: pathname === "/",
-                  hidden: pathname !== "/",
+                  "hidden md:block": pathname === "/",
+                  "hidden": pathname !== "/",
                 }
               )}
             ></span>
             {images[0].description}
             <span
               className={clsx(
-                "w-[86px] h-[5px] bg-white relative hidden md:block",
+                "w-[86px] h-[5px] bg-white relative",
                 {
-                  block: pathname === "/",
-                  hidden: pathname !== "/",
+                  "hidden md:block": pathname === "/",
+                  "hidden": pathname !== "/",
                 }
               )}
             ></span>{" "}
           </p>
-        )}
+        ) : null}
       </div>
     </div>
   );
