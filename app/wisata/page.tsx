@@ -71,7 +71,7 @@ const dataUlasan = [
 ];
 
 // ganti dengan api
-export const dataWisata = [
+const dataWisata = [
   {
     id: "0",
     nama: "Java Heritage",
