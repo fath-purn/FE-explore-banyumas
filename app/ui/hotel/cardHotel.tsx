@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Icon from "@mdi/react";
 import { mdiCityVariant } from "@mdi/js";
-import Start from "./start";
+import Start from "../start";
 import Fasilitas from "./fasilitas";
 import { CardButton } from "@/app/ui/button";
 

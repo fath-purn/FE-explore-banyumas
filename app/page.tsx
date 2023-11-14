@@ -3,8 +3,8 @@ import Search from "@/app/ui/search";
 import DataBanyumas from "@/app/ui/dataBanyumas";
 import CardImage from "./ui/cardImage";
 import Link from "next/link";
-import CardHotel from "@/app/ui/cardHotel";
-import CardWisata from "./ui/cardWisata";
+import CardHotel from "@/app/ui/hotel/cardHotel";
+import CardWisata from "./ui/wisata/cardWisata";
 import Footer from "./ui/footer";
 
 export default async function Page({

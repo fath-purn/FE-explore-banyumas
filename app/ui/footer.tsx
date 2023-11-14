@@ -3,20 +3,20 @@ import FooterGalery from "./footerGalery";
 
 export default function Footer() {
   return (
-    <footer className="mt-10 w-full bg-slate-950 ">
+    <footer className="mt-10 w-full bg-[#001020] ">
       <div className="flex justify-center">
         <div className="w-[95%] md:w-full pb-8 flex flex-col items-center">
           <div className="flex items-center mt-8 justify-center ">
             <div className="mr-5 flex flex-col items-end">
-              <span className="w-[55px] h-[3px] bg-rose-500 hidden md:block mb-1"></span>
-              <span className="w-[85px] h-[3px] bg-rose-500 hidden md:block"></span>
+              <span className="w-[55px] h-[3px] bg-[#FE6984] hidden md:block mb-1"></span>
+              <span className="w-[85px] h-[3px] bg-[#FE6984] hidden md:block"></span>
             </div>
             <h2 className="text-white text-[30px] md:text-[40px] font-semibold">
               ExploreBanyumas
             </h2>
             <div className="ml-5">
-              <span className="w-[55px] h-[3px] bg-rose-500 hidden md:block mb-1"></span>
-              <span className="w-[85px] h-[3px] bg-rose-500 hidden md:block"></span>
+              <span className="w-[55px] h-[3px] bg-[#FE6984] hidden md:block mb-1"></span>
+              <span className="w-[85px] h-[3px] bg-[#FE6984] hidden md:block"></span>
             </div>
           </div>
           <div className="mt-10 w-[80%] flex flex-col md:flex-row">
