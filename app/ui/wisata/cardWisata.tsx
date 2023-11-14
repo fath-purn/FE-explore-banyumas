@@ -17,7 +17,7 @@ interface WisataProps {
   }[];
 }
 
-export default function CardWisata({ wisata }: WisataProps) {
+export default function CardWisata({ wisata}: WisataProps ): JSX.Element  {
   return (
     <>
       {wisata.map((wisata, index) => {

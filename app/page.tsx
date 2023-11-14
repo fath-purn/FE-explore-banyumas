@@ -7,7 +7,70 @@ import CardHotel from "@/app/ui/hotel/cardHotel";
 import CardWisata from "./ui/wisata/cardWisata";
 import Footer from "./ui/footer";
 
-// ganti dengan api
+// panggil dari api
+export const dataWisata = [
+  {
+    id: "0",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+  {
+    id: "1",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+  {
+    id: "2",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+  {
+    id: "3",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+  {
+    id: "4",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    price: 500000,
+    keterangan: {
+      jarak: 10,
+      buka: "08:00",
+      tutup: "17:00",
+      akomodasi: 12,
+    },
+  },
+];
+
 export const dataHotel = [
   {
     id: "0",
@@ -80,71 +143,6 @@ export const dataHotel = [
     price: 500000,
   },
 ];
-
-// ganti dengan api
-export const dataWisata = [
-  {
-    id: "0",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "1",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "2",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "3",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "4",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-];
-
 
 export default async function Page({
   searchParams,

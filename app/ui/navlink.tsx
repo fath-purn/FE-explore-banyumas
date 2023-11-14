@@ -49,12 +49,14 @@ const links = [
 
 export default function Navlink() {
   const pathname = usePathname();
-  const isScreenAbove768px = useMediaQuery('(max-width:880px)');
+  const trimmedPathname = pathname.substring(0, pathname.indexOf('/', 1));
+  const isScreen = useMediaQuery('(max-width:880px)');
 
   return (
     <>
-      {isScreenAbove768px && <Logo /> }
+      {isScreen && <Logo /> }
       {links.map((link) => {
+        const isActive = pathname === link.href || trimmedPathname === link.href;
         return (
           <Link
             key={link.name}
@@ -62,13 +64,13 @@ export default function Navlink() {
             className={clsx(
               "flex h-[48px] grow items-center justify-center gap-2 bg-white p-3 text-sm font-medium hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
               {
-                "text-black": pathname !== link.href,
-                "text-blue-600": pathname === link.href,
+                "text-black": !isActive,
+                "text-blue-600": isActive,
               }
             )}
           >
             <Icon
-              path={pathname === link.href ? link.icon : link.iconOutline}
+              path={isActive ? link.icon : link.iconOutline}
               size={1}
               color="currentColor"
             />
@@ -78,4 +80,4 @@ export default function Navlink() {
       })}
     </>
   );
-}
+    }
