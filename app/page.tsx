@@ -205,7 +205,7 @@ export default async function Page({
           <h3 className="text-black text-[1.18rem] md:text-2xl font-semibold">
             Hotel Terbaik di Banyumas
           </h3>
-          <Link href="/" className="text-neutral-500 text-base-md md:text-xl font-medium">
+          <Link href="/destinasi" className="text-neutral-500 text-base-md md:text-xl font-medium">
             Lihat semua
           </Link>
         </div>
@@ -219,7 +219,7 @@ export default async function Page({
           <h3 className="text-black text-[1.18rem] md:text-2xl font-semibold">
             Wisata Terbaik di Banyumas
           </h3>
-          <Link href="/" className="text-neutral-500 text-base-md md:text-xl font-medium">
+          <Link href="/destinasi" className="text-neutral-500 text-base-md md:text-xl font-medium">
             Lihat semua
           </Link>
         </div>

@@ -155,7 +155,7 @@ export default function Page({ params }: { params: { id: string } }) {
             </Link>
           </div>
         </div>
-        <div className="w-[90%] md:w-[90%] mt-0">
+        <div className="w-[95%] md:w-[90%] mt-0">
           <h2 className="text-black text-[25px] font-semibold mb-5">
             Hotel terdekat lainnya
           </h2>

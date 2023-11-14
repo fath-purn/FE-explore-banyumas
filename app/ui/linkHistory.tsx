@@ -1,20 +1,58 @@
 import Link from "next/link";
 
-export default function LinkHistory({ link }: { link: string }) {
+export default function LinkHistory({
+  link,
+  destinasi,
+  hotel,
+}: {
+  link: string;
+  destinasi?: boolean;
+  hotel?: boolean;
+}) {
   const capitalizedLink = link.charAt(0).toUpperCase() + link.slice(1);
   return (
     <>
-      <Link href="/" className="text-gray-500 text-sm md:text-base font-semibold">
+      <Link
+        href="/"
+        className="text-gray-500 text-sm md:text-base font-semibold"
+      >
         Beranda
       </Link>
       <p className="text-gray-500 text-sm md:text-base font-semibold">/</p>
-      <Link href={`/${link}`} className="text-gray-500 text-sm md:text-base font-semibold">
-        {capitalizedLink}
-      </Link>
-      <p className="text-gray-500 text-sm md:text-base font-semibold">/</p>
-      <p className="text-black text-sm md:text-base font-semibold">
-        Detail {capitalizedLink}
-      </p>
+      {destinasi ? (
+        <>
+          <Link
+            href={`/destinasi`}
+            className="text-gray-500 text-sm md:text-base font-semibold"
+          >
+            Destinasi
+          </Link>
+          <p className="text-gray-500 text-sm md:text-base font-semibold">/</p>
+          <Link
+            href={hotel ? `/hotel` : `/wisata`}
+            className="text-gray-500 text-sm md:text-base font-semibold"
+          >
+            {hotel ? "Hotel" : "Wisata"}
+          </Link>
+          <p className="text-gray-500 text-sm md:text-base font-semibold">/</p>
+          <p className="text-black-500 text-sm md:text-base font-semibold">
+            {capitalizedLink}
+          </p>
+        </>
+      ) : (
+        <>
+          <Link
+            href={`/${link}`}
+            className="text-gray-500 text-sm md:text-base font-semibold"
+          >
+            {capitalizedLink}
+          </Link>
+          <p className="text-gray-500 text-sm md:text-base font-semibold">/</p>
+          <p className="text-black text-sm md:text-base font-semibold">
+            Detail {capitalizedLink}
+          </p>
+        </>
+      )}
     </>
   );
 }
