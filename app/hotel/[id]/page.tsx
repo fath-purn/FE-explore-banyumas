@@ -1,7 +1,6 @@
 import LinkHistory from "@/app/ui/linkHistory";
 import Image from "next/image";
 import Link from "next/link";
-import Keterangan from "@/app/ui/wisata/keterangan";
 import { mdiMapMarker } from "@mdi/js";
 import Icon from "@mdi/react";
 import { dataWisata } from "@/app/page";
@@ -10,7 +9,7 @@ import CardWisata from "@/app/ui/wisata/cardWisata";
 import Fasilitas from "@/app/ui/hotel/fasilitas";
 
 // panggil dari api
-export const dataHotelById = [
+const dataHotelById = [
   {
     id: "0",
     nama: "Baturaden",
