@@ -46,7 +46,7 @@ const keteranganWisata = [
   },
 ];
 
-export default function keterangan({ keterangan, detail }: Props): JSX.Element {
+export default function Keterangan({ keterangan, detail }: Props): JSX.Element {
   const params = usePathname();
 
   const filteredKeteranganWisata = keteranganWisata.filter((item) =>
