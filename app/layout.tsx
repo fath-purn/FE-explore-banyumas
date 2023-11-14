@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import { inter } from '@/app/ui/fonts'
+import { poppins } from '@/app/ui/fonts'
 import './globals.css'
-import Navbar from './ui/navbar'
+import Navbar from './ui/navbar';
 
 export const metadata: Metadata = {
   title: {
@@ -19,9 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body className={`${poppins.className}`}>
         <Navbar />
-        {children}</body>
+        <div className="relative top-[48px]">
+          {children}
+        </div>
+      </body>
     </html>
   )
 }

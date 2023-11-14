@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function about() {
     return (
-        <div>
+        <div className="">
             <h1>Hotel</h1>
         </div>
     )
