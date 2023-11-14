@@ -32,9 +32,9 @@ const data = [
 export default function Page() {
   return (
     <>
-      {data.map((item) => {
+      {data.map((item, index) => {
         return (
-          <div className="flex flex-col items-center justify-center w-[220px] h-[170px] md:h-[220px] bg-white">
+          <div key={index} className="flex flex-col items-center justify-center w-[220px] h-[170px] md:h-[220px] bg-white">
             <Icon path={item.icon} size={3} className="text-black" />
             <div className="flex flex-row gap-2 mt-1">
               <h2 className="text-black text-xl font-semibold">
