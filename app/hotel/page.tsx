@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 // ganti dengan api
-export const dataHotel = [
+const dataHotel = [
   {
     id: "0",
     nama: "Java Heritage",
@@ -85,7 +85,7 @@ export const dataHotel = [
 ];
 
 // ganti dengan api
-export const dataUlasan = [
+const dataUlasan = [
   {
     id: 0,
     user: "Ferina Nur W",
