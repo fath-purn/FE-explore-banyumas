@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 // ganti dengan api
-export const dataUlasan = [
+const dataUlasan = [
   {
     id: 0,
     user: "Ferina Nur W",
