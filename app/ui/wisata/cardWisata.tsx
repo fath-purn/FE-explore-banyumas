@@ -4,70 +4,22 @@ import { mdiCar } from "@mdi/js";
 import { CardButton } from "@/app/ui/button";
 import Keterangan from "./keterangan";
 
-const wisata = [
-  {
-    id: "0",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
+interface WisataProps {
+  wisata: {
+    id: string;
+    nama: string;
+    src: string;
+    price: number;
     keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "1",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "2",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "3",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "4",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-];
+      jarak: number;
+      buka: string;
+      tutup: string;
+      akomodasi: number;
+    };
+  }[];
+}
 
-export default function CardWisata() {
+export default function CardWisata({ wisata}: WisataProps ): JSX.Element  {
   return (
     <>
       {wisata.map((wisata, index) => {
