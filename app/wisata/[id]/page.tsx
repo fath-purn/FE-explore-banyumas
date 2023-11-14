@@ -9,7 +9,7 @@ import { dataHotel } from "@/app/page";
 import Footer from "@/app/ui/footer";
 
 // panggil dari api
-export const dataWisataById = [
+const dataWisataById = [
   {
     id: "0",
     nama: "Baturaden",

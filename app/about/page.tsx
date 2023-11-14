@@ -4,7 +4,7 @@ import Image from "next/image";
 import CardMember from "@/app/ui/about/cardMember";
 import Footer from "@/app/ui/footer";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "About US",
 };
 
