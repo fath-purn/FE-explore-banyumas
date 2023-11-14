@@ -57,7 +57,7 @@ export default function keterangan({ keterangan, detail }: Props): JSX.Element {
     <>
       {params !== "/" ? (
         filteredKeteranganWisata.map((item, index) => (
-          <div key={index} className="flex items-center mt-1">
+          <div key={index} className={clsx("flex items-center mt-1", detail && "mt-2")}>
             <Icon
               path={item.icon}
               size={detail ? 1.1 : 0.8}
@@ -67,7 +67,7 @@ export default function keterangan({ keterangan, detail }: Props): JSX.Element {
             <p
               className={clsx(
                 "text-gray-500 text-[8px] font-light",
-                detail ? "text-[15px]" : ""
+                detail && "text-[15px]",
               )}
             >
               {item.text(keterangan)}

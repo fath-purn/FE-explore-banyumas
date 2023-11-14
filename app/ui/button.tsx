@@ -13,7 +13,7 @@ export function CardButton({ href, hw }: CardButtonProps): JSX.Element {
       href={linkHref}
       className="px-2 py-1 sm:px-3 sm:py-2 bg-blue-500 rounded-[5px] text-white text-[8px] font-medium"
     >
-      Lihat Kamar
+      {hw === "hotel" ? "Lihat Hotel" : "Selengkapnya"}
     </Link>
   );
 }
