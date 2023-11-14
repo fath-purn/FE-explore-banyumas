@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import TopBaner from "@/app/ui/topBaner";
 import CardDestinasi from "../ui/destinasi/cardDestinasi";
 import Pagitation from "../ui/destinasi/pagination";
+import Footer from "../ui/footer";
 
 export const metadata: Metadata = {
   title: "Destinasi",
 };
 
+// ganti dengan api
 export const dataKecamatan = [
   {
     id: 0,
@@ -195,7 +197,7 @@ export default async function Destinasi({
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   return (
-    <main className="h-[10000px]">
+    <main>
       <div className="h-[528px]">
         <TopBaner />
       </div>
@@ -211,6 +213,7 @@ export default async function Destinasi({
       <div className="flex flex-row justify-center items-center mt-10">
         <Pagitation totalPages={totalPages} />
       </div>
+      <Footer />
     </main>
   );
 }

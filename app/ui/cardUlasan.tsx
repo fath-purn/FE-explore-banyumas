@@ -26,8 +26,8 @@ export const responsive = {
   },
 };
 
-export default function cardUlasan({ productData}: { productData: any}) {
-  const product = productData.map((item: { id: number; user: string; title: string; comment: string; }) => (
+export default function cardUlasan({ dataUlasan}: { dataUlasan: any}) {
+  const product = dataUlasan.map((item: { id: number; user: string; title: string; comment: string; }) => (
     <Ulasan id={item.id} name={item.user} title={item.title} comment={item.comment} />
   ));
 

@@ -50,6 +50,16 @@ const destinasi: Baner[] = [
   },
 ];
 
+const about: Baner[] = [
+  {
+    alt: "Tentang Kami",
+    src: "https://ik.imagekit.io/fathpurn/destinasi.png?updatedAt=1699774720315",
+    title: "Tentang Kami",
+    description: "Website sistem informasi Hotel dan Wisata di banyumas",
+    className: "max-h-[528px]"
+  },
+];
+
 export default function Background() {
   const pathname = usePathname();
   const images =
@@ -59,7 +69,9 @@ export default function Background() {
       ? wisata
       : pathname === "/hotel"
       ? hotel
-      : destinasi;
+      : pathname === "/destinasi"
+      ? destinasi
+      : about;
   return (
     <div className="flex items-center justify-center h-full d:w-3/5 md:px-28 md:py-12">
       <Image
@@ -67,20 +79,13 @@ export default function Background() {
         src={images[0].src}
         quality={100}
         fill
-        className={`${images[0].className} absolute top-0 left-0 z-[-1] hidden md:block w-[100%] brightness-[0.6]`}
-      />
-      <Image
-        alt={images[0].alt}
-        src={images[0].src}
-        quality={100}
-        fill
-        className={`${images[0].className} absolute top-0 left-0 z-[-1] block md:hidden w-full brightness-[0.6]`}
+        className={`${images[0].className} absolute top-0 left-0 z-[-1] object-cover w-[100%] brightness-[0.6]`}
       />
       <div className="flex flex-col items-center m-auto">
         <h1 className="text-white font-bold text-5xl md:text-[50px] leading-relaxed text-center w-[90%] sm:w-full">
           {images[0].title}
         </h1>
-        {pathname === "/" || pathname === '/destinasi' ? (
+        {pathname === "/" || pathname === '/destinasi' || pathname === '/about' ? (
           <p className="text-white text-2xl md:text-[30px] text-center w-[90%] sm:w-full my-6 flex justify-center space-x-2 gap-8 items-center">
             <span
               className={clsx(
@@ -94,13 +99,13 @@ export default function Background() {
             {images[0].description}
             <span
               className={clsx(
-                "w-[86px] h-[5px] bg-white relative",
+                "w-[86px] h-[5px] bg-white relative ",
                 {
                   "hidden md:block": pathname === "/",
                   "hidden": pathname !== "/",
                 }
               )}
-            ></span>{" "}
+            ></span>
           </p>
         ) : null}
       </div>
