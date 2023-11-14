@@ -3,7 +3,7 @@
 import React from "react";
 import Icon from "@mdi/react";
 import clsx from "clsx";
-import { mdiCar, mdiClockOutline, mdiBed, mdiPool, mdiParking  } from "@mdi/js";
+import { mdiCar, mdiClockOutline, mdiBed, mdiPool, mdiParking } from "@mdi/js";
 import { usePathname } from "next/navigation";
 
 type Props = {
@@ -16,6 +16,7 @@ type Props = {
     parkir?: boolean;
     tiket?: number;
   };
+  detail?: boolean;
 };
 
 const keteranganWisata = [
@@ -45,10 +46,12 @@ const keteranganWisata = [
   },
 ];
 
-export default function keterangan({ keterangan }: Props): JSX.Element {
+export default function keterangan({ keterangan, detail }: Props): JSX.Element {
   const params = usePathname();
 
-  const filteredKeteranganWisata = keteranganWisata.filter((item) => item.text(keterangan));
+  const filteredKeteranganWisata = keteranganWisata.filter((item) =>
+    item.text(keterangan)
+  );
 
   return (
     <>
@@ -57,12 +60,15 @@ export default function keterangan({ keterangan }: Props): JSX.Element {
           <div key={index} className="flex items-center mt-1">
             <Icon
               path={item.icon}
-              size={0.8}
+              size={detail ? 1.1 : 0.8}
               color="#FE6984"
               className="inline mr-2"
             />
             <p
-              className="text-neutral-500 text-[8px] font-light"
+              className={clsx(
+                "text-gray-500 text-[8px] font-light",
+                detail ? "text-[15px]" : ""
+              )}
             >
               {item.text(keterangan)}
             </p>
@@ -72,12 +78,15 @@ export default function keterangan({ keterangan }: Props): JSX.Element {
         <div className="flex items-center mt-1">
           <Icon
             path={filteredKeteranganWisata[0].icon}
-            size={0.8}
+            size={detail ? 1.1 : 0.8}
             color="#FE6984"
             className="inline mr-2"
           />
           <p
-            className="text-neutral-500 text-[8px] font-light"
+            className={clsx(
+              "text-gray-500 text-[8px] font-light",
+              detail ? "text-[15px]" : ""
+            )}
           >
             {filteredKeteranganWisata[0].text(keterangan)}
           </p>

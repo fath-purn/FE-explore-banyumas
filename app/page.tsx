@@ -6,10 +6,9 @@ import Link from "next/link";
 import CardHotel from "@/app/ui/hotel/cardHotel";
 import CardWisata from "./ui/wisata/cardWisata";
 import Footer from "./ui/footer";
-import { dataWisata } from "./wisata/page";
 
 // panggil dari api
-export const wisata = [
+export const dataWisata = [
   {
     id: "0",
     nama: "Java Heritage",
@@ -69,6 +68,79 @@ export const wisata = [
       tutup: "17:00",
       akomodasi: 12,
     },
+  },
+];
+
+export const dataHotel = [
+  {
+    id: "0",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+  {
+    id: "1",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+  {
+    id: "2",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+  {
+    id: "3",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+  {
+    id: "4",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
   },
 ];
 
@@ -138,7 +210,7 @@ export default async function Page({
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardHotel />
+          <CardHotel hotel={dataHotel} />
         </div>
       </div>
       {/* Hotel terbaik di Banyumas */}

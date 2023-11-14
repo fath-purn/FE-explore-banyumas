@@ -7,9 +7,6 @@ import {
   mdiRoomService,
   mdiFood,
   mdiFoodVariant,
-  mdiCar,
-  mdiClockOutline,
-  mdiBed,
 } from "@mdi/js";
 
 type Props = {

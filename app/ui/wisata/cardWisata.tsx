@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Icon from "@mdi/react";
-import { mdiCar } from "@mdi/js";
 import { CardButton } from "@/app/ui/button";
 import Keterangan from "./keterangan";
 
