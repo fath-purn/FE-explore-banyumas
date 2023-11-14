@@ -4,6 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Icon from "@mdi/react";
 import { mdiAccountCircleOutline } from "@mdi/js";
+import { Key } from "react";
 
 export const responsive = {
   superLargeDesktop: {
@@ -27,8 +28,8 @@ export const responsive = {
 };
 
 export default function cardUlasan({ dataUlasan}: { dataUlasan: any}) {
-  const product = dataUlasan.map((item: { id: number; user: string; title: string; comment: string; }) => (
-    <Ulasan id={item.id} name={item.user} title={item.title} comment={item.comment} />
+  const product = dataUlasan.map((item: { id: number; user: string; title: string; comment: string; }, index: Key | null | undefined) => (
+    <Ulasan key={index} id={item.id} name={item.user} title={item.title} comment={item.comment} />
   ));
 
   return (
