@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import TopBaner from "@/app/ui/topBaner";
 import CardDestinasi from "../ui/destinasi/cardDestinasi";
-import Pagitation from "../ui/destinasi/pagination";
+import Pagination from "../ui/destinasi/pagination";
 import Footer from "../ui/footer";
 
 export const metadata: Metadata = {
@@ -9,176 +9,179 @@ export const metadata: Metadata = {
 };
 
 // ganti dengan api
-export const dataKecamatan = [
-  {
-    id: 0,
-    kecamatan: "Baturaden",
-    hotel: {
-      alt: "Hotel",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
+export const dataKecamatan = {
+  jumlahKecamatan: 112,
+  data: [
+    {
+      id: 0,
+      kecamatan: "Baturaden",
+      hotel: {
+        alt: "Hotel",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
+      wisata: {
+        alt: "Wisata",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
     },
-    wisata: {
-      alt: "Wisata",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
+    {
+      id: 1,
+      kecamatan: "Banyumas",
+      hotel: {
+        alt: "Hotel",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
+      wisata: {
+        alt: "Wisata",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
     },
-  },
-  {
-    id: 1,
-    kecamatan: "Banyumas",
-    hotel: {
-      alt: "Hotel",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
+    {
+      id: 2,
+      kecamatan: "Purwokerto Selatan",
+      hotel: {
+        alt: "Hotel",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
+      wisata: {
+        alt: "Wisata",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
     },
-    wisata: {
-      alt: "Wisata",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
+    {
+      id: 3,
+      kecamatan: "Cilongok",
+      hotel: {
+        alt: "Hotel",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
+      wisata: {
+        alt: "Wisata",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
     },
-  },
-  {
-    id: 2,
-    kecamatan: "Purwokerto Selatan",
-    hotel: {
-      alt: "Hotel",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
+    {
+      id: 4,
+      kecamatan: "Baturaden",
+      hotel: {
+        alt: "Hotel",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
+      wisata: {
+        alt: "Wisata",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
     },
-    wisata: {
-      alt: "Wisata",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
+    {
+      id: 5,
+      kecamatan: "Banyumas",
+      hotel: {
+        alt: "Hotel",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
+      wisata: {
+        alt: "Wisata",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
     },
-  },
-  {
-    id: 3,
-    kecamatan: "Cilongok",
-    hotel: {
-      alt: "Hotel",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
+    {
+      id: 6,
+      kecamatan: "Purwokerto Selatan",
+      hotel: {
+        alt: "Hotel",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
+      wisata: {
+        alt: "Wisata",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
     },
-    wisata: {
-      alt: "Wisata",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
+    {
+      id: 7,
+      kecamatan: "Cilongok",
+      hotel: {
+        alt: "Hotel",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
+      wisata: {
+        alt: "Wisata",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
     },
-  },
-  {
-    id: 4,
-    kecamatan: "Baturaden",
-    hotel: {
-      alt: "Hotel",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
+    {
+      id: 8,
+      kecamatan: "Baturaden",
+      hotel: {
+        alt: "Hotel",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
+      wisata: {
+        alt: "Wisata",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
     },
-    wisata: {
-      alt: "Wisata",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
+    {
+      id: 9,
+      kecamatan: "Banyumas",
+      hotel: {
+        alt: "Hotel",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
+      wisata: {
+        alt: "Wisata",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
     },
-  },
-  {
-    id: 5,
-    kecamatan: "Banyumas",
-    hotel: {
-      alt: "Hotel",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
+    {
+      id: 10,
+      kecamatan: "Purwokerto Selatan",
+      hotel: {
+        alt: "Hotel",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
+      wisata: {
+        alt: "Wisata",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
     },
-    wisata: {
-      alt: "Wisata",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
+    {
+      id: 11,
+      kecamatan: "safnsafnsajfnajln",
+      hotel: {
+        alt: "Hotel",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
+      wisata: {
+        alt: "Wisata",
+        src: "https://via.placeholder.com/271x289",
+        total: 113,
+      },
     },
-  },
-  {
-    id: 6,
-    kecamatan: "Purwokerto Selatan",
-    hotel: {
-      alt: "Hotel",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
-    },
-    wisata: {
-      alt: "Wisata",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
-    },
-  },
-  {
-    id: 7,
-    kecamatan: "Cilongok",
-    hotel: {
-      alt: "Hotel",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
-    },
-    wisata: {
-      alt: "Wisata",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
-    },
-  },
-  {
-    id: 8,
-    kecamatan: "Baturaden",
-    hotel: {
-      alt: "Hotel",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
-    },
-    wisata: {
-      alt: "Wisata",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
-    },
-  },
-  {
-    id: 9,
-    kecamatan: "Banyumas",
-    hotel: {
-      alt: "Hotel",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
-    },
-    wisata: {
-      alt: "Wisata",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
-    },
-  },
-  {
-    id: 10, 
-    kecamatan: "Purwokerto Selatan",
-    hotel: {
-      alt: "Hotel",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
-    },
-    wisata: {
-      alt: "Wisata",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
-    },
-  },
-  {
-    id: 11,
-    kecamatan: "safnsafnsajfnajln",
-    hotel: {
-      alt: "Hotel",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
-    },
-    wisata: {
-      alt: "Wisata",
-      src: "https://via.placeholder.com/271x289",
-      total: 113,
-    },
-  },
-];
+  ],
+};
 
 export default async function Destinasi({
   searchParams,
@@ -193,7 +196,7 @@ export default async function Destinasi({
 
   const itemsPerPage = 10; // Change this to the desired number of items per page
 
-  const totalItems = dataKecamatan.length;
+  const totalItems = dataKecamatan.data.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   return (
@@ -205,13 +208,13 @@ export default async function Destinasi({
       {/* Card destinasi */}
       <div className="w-full mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  justify-center items-center m-auto w-[95%] mt-5 gap-5">
-          <CardDestinasi dataKecamatan={dataKecamatan} page={currentPage}/>
+          <CardDestinasi dataKecamatan={dataKecamatan.data} page={currentPage} />
         </div>
       </div>
 
       {/* pagination */}
       <div className="flex flex-row justify-center items-center mt-10">
-        <Pagitation totalPages={totalPages} />
+        <Pagination totalPages={totalPages} />
       </div>
       <Footer />
     </main>

@@ -81,7 +81,7 @@ export default function Fasilitas({ fasilitas, detail }: Props): JSX.Element {
     <>
       {Object.values(fasilitas).some((value) => value) && (
         <>
-          {fasilitasHotel.map((item, index) => (
+          {fasilitasHotel.slice(0, detail ? fasilitasHotel.length : 5).map((item, index) => (
             <div key={index} className={clsx("flex items-center mt-1", detail && "mt-2")}>
               <Icon
                 path={item.icon}
