@@ -5,6 +5,7 @@ import Link from "next/link";
 import CardWisata from "@/app/ui/wisata/cardWisata";
 import Footer from "../ui/footer";
 import CardUlasan from "../ui/cardUlasan";
+import AddUlasan from "../ui/ulasan/addUlasan";
 
 export const metadata: Metadata = {
   title: "Wisata",
@@ -184,17 +185,7 @@ export default function wisata() {
       {/* Ulasan */}
       <div className="w-full mt-10">
         <hr className="bg-black" />
-        <div className="flex items-center mt-8 justify-center ">
-          <div className="mr-5 flex flex-col items-end">
-            <span className="w-[55px] h-[2px] bg-[#FE6984] hidden md:block"></span>
-            <span className="w-[85px] h-[2px] bg-[#FE6984] hidden md:block mt-1"></span>
-          </div>
-          <h2 className="text-black text-[25px] font-semibold">Ulasan</h2>
-          <div className="ml-5">
-            <span className="w-[55px] h-[2px] bg-[#FE6984] hidden md:block"></span>
-            <span className="w-[85px] h-[2px] bg-[#FE6984] hidden md:block mt-1"></span>
-          </div>
-        </div>
+        <AddUlasan wisata={true} />
         <div className="">
           <CardUlasan dataUlasan={dataUlasan} />
         </div>
