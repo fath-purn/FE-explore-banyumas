@@ -1,11 +1,11 @@
 import TopBaner from "@/app/ui/topBaner";
 import Search from "@/app/ui/search";
 import DataBanyumas from "@/app/ui/dataBanyumas";
-import CardImage from "./ui/cardImage";
+import CardImage from "@/app/ui/cardImage";
 import Link from "next/link";
 import CardHotel from "@/app/ui/hotel/cardHotel";
-import CardWisata from "./ui/wisata/cardWisata";
-import Footer from "./ui/footer";
+import CardWisata from "@/app/ui/wisata/cardWisata";
+import Footer from "@/app/ui/footer";
 
 // panggil dari api
 export const dataWisata = [

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import TopBaner from "@/app/ui/topBaner";
-import CardDestinasi from "../ui/destinasi/cardDestinasi";
-import Pagination from "../ui/destinasi/pagination";
-import Footer from "../ui/footer";
+import CardDestinasi from "@/app/ui/destinasi/cardDestinasi";
+import Pagination from "@/app/ui/destinasi/pagination";
+import Footer from "@/app/ui/footer";
 
 export const metadata: Metadata = {
   title: "Destinasi",

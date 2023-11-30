@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { poppins } from '@/app/ui/fonts';
-import './globals.css';
-import Navbar from './ui/navbar';
+import '../globals.css';
+import Navbar from '@/app/ui/navbar';
 
 export const metadata: Metadata = {
   title: {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: 'Explore Banyumas',
   },
   description: 'Explore Banyumas',
-  metadataBase: new URL('http://localhost:3000/'),
+  metadataBase: new URL('https://fe-explore-banyumas.vercel.app/'),
 }
 
 export default function RootLayout({

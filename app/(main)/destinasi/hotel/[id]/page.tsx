@@ -1,8 +1,8 @@
 import LinkHistory from "@/app/ui/linkHistory";
-import { dataHotel } from "@/app/page";
 import CardHotel from "@/app/ui/hotel/cardHotel";
 import Pagination from "@/app/ui/destinasi/pagination";
-import { dataKecamatan } from "@/app/destinasi/page";
+import { dataHotel } from "@/app/(main)/page";
+import { dataKecamatan } from "@/app/(main)/destinasi/page";
 import Footer from "@/app/ui/footer";
 
 interface Props {

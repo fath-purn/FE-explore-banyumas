@@ -1,15 +1,89 @@
 import type { Metadata } from "next";
 import TopBaner from "@/app/ui/topBaner";
 import Search from "@/app/ui/search";
+import CardHotel from "@/app/ui/hotel/cardHotel";
 import Link from "next/link";
-import CardWisata from "@/app/ui/wisata/cardWisata";
-import Footer from "../ui/footer";
-import CardUlasan from "../ui/cardUlasan";
-import AddUlasan from "../ui/ulasan/addUlasan";
+import Footer from "@/app/ui/footer";
+import CardUlasan from "@/app/ui/cardUlasan";
+import AddUlasan from "@/app/ui/ulasan/addUlasan";
 
 export const metadata: Metadata = {
-  title: "Wisata",
+  title: "Hotel",
 };
+
+// ganti dengan api
+const dataHotel = [
+  {
+    id: "0",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+  {
+    id: "1",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+  {
+    id: "2",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+  {
+    id: "3",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+  {
+    id: "4",
+    nama: "Java Heritage",
+    src: "https://via.placeholder.com/237x217",
+    start: 5,
+    fasilitas: {
+      wifi: true,
+      bar: false,
+      roomService: true,
+      breakfast: true,
+      restaurant: true,
+    },
+    price: 500000,
+  },
+];
 
 // ganti dengan api
 const dataUlasan = [
@@ -71,73 +145,9 @@ const dataUlasan = [
   },
 ];
 
-// ganti dengan api
-const dataWisata = [
-  {
-    id: "0",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "1",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "2",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "3",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "4",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-];
-
-export default function wisata() {
+export default function hotel() {
   return (
-    <main>
+    <main className="">
       <div className="h-[617px]">
         <TopBaner />
       </div>
@@ -147,11 +157,11 @@ export default function wisata() {
         </div>
       </div>
 
-      {/* Wisata Terdekat */}
+      {/* Hotel Terbaik */}
       <div className="w-full mt-10">
         <div className="flex justify-between items-center m-auto w-[95%] md:w-[85%]">
           <h3 className="text-black text-[1.18rem] md:text-2xl font-semibold">
-            Wisata Terdekat
+            Hotel Terbaik
           </h3>
           <Link
             href="/"
@@ -161,15 +171,15 @@ export default function wisata() {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardWisata wisata={dataWisata} />
+          <CardHotel hotel={dataHotel} />
         </div>
       </div>
 
-      {/* Wisata paling banyak pengunjung */}
+      {/* Hotel Populer */}
       <div className="w-full mt-10">
         <div className="flex justify-between items-center m-auto w-[95%] md:w-[85%]">
           <h3 className="text-black text-[1.18rem] md:text-2xl font-semibold">
-            Wisata paling banyak pengunjung
+            Hotel Populer
           </h3>
           <Link
             href="/"
@@ -179,13 +189,14 @@ export default function wisata() {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardWisata wisata={dataWisata} />
+          <CardHotel hotel={dataHotel} />
         </div>
       </div>
+
       {/* Ulasan */}
       <div className="w-full mt-10">
         <hr className="bg-black" />
-        <AddUlasan wisata={true} />
+        <AddUlasan hotel={true} />
         <div className="">
           <CardUlasan dataUlasan={dataUlasan} />
         </div>

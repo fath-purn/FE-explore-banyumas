@@ -14,6 +14,7 @@ export function LogoFull(
         fill="none"
         viewBox="0 0 212 47"
         {...props}
+        className="hidden md:block"
       >
         <path
           fill="#000"
@@ -59,6 +60,7 @@ export function Logo(
         fill="none"
         viewBox="0 0 47 47"
         {...props}
+        className="block md:hidden"
       >
         <path
           fill="url(#a)"
