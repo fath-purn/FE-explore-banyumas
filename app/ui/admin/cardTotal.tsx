@@ -10,7 +10,7 @@ import {
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-export default function page() {
+export default function CardTotal() {
   const [kecamatanTotal, setKecamatanTotal] = useState<String>("");
   const [wisataTotal, setWisataTotal] = useState<String>("");
   const [hotelTotal, setHotelTotal] = useState<String>("");

@@ -5,9 +5,9 @@ import { UpdateInvoice, DeleteInvoice } from "@/app/ui/admin/buttons";
 import { PageLimitSearch } from "@/app/utils/definitions";
 import Link from "next/link";
 import Pagination from "@/app/ui/destinasi/pagination";
-import { Key, useState } from "react";
+import { Key, useState, useEffect } from "react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { TrashIcon } from "@heroicons/react/24/outline";
+
 
 async function getData({ currentPage, limit, search }: PageLimitSearch) {
   const res = await fetch(
@@ -33,9 +33,18 @@ export default async function TableWisata({
   currentPage: number;
   search: string;
 }) {
-  const data = await getData({ currentPage, limit, search });
-  const dataWisata = data.wisataObject;
-  const totalPages = Math.ceil(data.pagination.total_items / 10);
+  const [dataWisata, setDataWisata] = useState<any[]>([]);
+  const [totalPages, setTotalPages] = useState<number>(0);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getData({ currentPage, limit, search });
+      setDataWisata(data.wisataObject);
+      setTotalPages(Math.ceil(data.pagination.total_items / 10));
+    }
+
+    fetchData();
+  }, [currentPage, limit, search]);
 
   return (
     <div className="mt-6 flow-root">
