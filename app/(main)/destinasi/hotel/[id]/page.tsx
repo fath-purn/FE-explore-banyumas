@@ -2,7 +2,6 @@ import LinkHistory from "@/app/ui/linkHistory";
 import CardHotel from "@/app/ui/hotel/cardHotel";
 import Pagination from "@/app/ui/destinasi/pagination";
 import { dataHotel } from "@/app/(main)/page";
-import { dataKecamatan } from "@/app/(main)/destinasi/page";
 import Footer from "@/app/ui/footer";
 
 interface Props {
@@ -27,10 +26,7 @@ export default function Page({ params, searchParams }: Props) {
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
 
-  const itemsPerPage = 10; // Change this to the desired number of items per page
-
-  const totalItems = dataKecamatan.data.length;
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const totalPages = 2;
 
   return (
     <div>
