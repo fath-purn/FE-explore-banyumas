@@ -3,7 +3,7 @@
 import { UpdateInvoice, DeleteInvoice } from "@/app/ui/admin/buttons";
 import { PageLimitSearch } from "@/app/utils/definitions";
 import Link from "next/link";
-import { Key, useState } from "react";
+import { Key, useState, useEffect } from "react";
 
 async function getData({ currentPage, limit, search }: PageLimitSearch) {
   const res = await fetch(
@@ -20,7 +20,7 @@ async function getData({ currentPage, limit, search }: PageLimitSearch) {
   return data.data;
 }
 
-export default async function TableWisata({
+export default async function TableUlasan({
   currentPage,
   limit,
   search,
@@ -29,8 +29,16 @@ export default async function TableWisata({
   currentPage: number;
   search: string;
 }) {
-  const dataUlasan = await getData({ currentPage, limit, search });
+  const [dataUlasan, setDataUlasan] = useState<any[]>([]);
 
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getData({ currentPage, limit, search });
+      setDataUlasan(data);
+    }
+
+    fetchData();
+  }, [currentPage, limit, search]);
 
   return (
     <div className="mt-6 flow-root">
@@ -191,9 +199,6 @@ export default async function TableWisata({
           </table>
         </div>
       </div>
-      {/* <div className="mt-5 flex w-full justify-center">
-        <Pagination totalPages={totalPages} />
-      </div> */}
     </div>
   );
 }

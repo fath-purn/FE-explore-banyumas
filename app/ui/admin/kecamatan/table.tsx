@@ -4,7 +4,7 @@ import Image from "next/image";
 import { UpdateInvoice, DeleteInvoice } from "@/app/ui/admin/buttons";
 import { PageLimitSearch } from "@/app/utils/definitions";
 import Link from "next/link";
-import { Key, useState } from "react";
+import { useEffect, Key, useState } from "react";
 
 async function getData({ currentPage, limit, search }: PageLimitSearch) {
   const res = await fetch(
@@ -30,7 +30,16 @@ export default async function TableKecamatan({
   currentPage: number;
   search: string;
 }) {
-  const dataKecamatan = await getData({ currentPage, limit, search });
+  const [dataKecamatan, setDataKecamatan] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getData({ currentPage, limit, search });
+      setDataKecamatan(data);
+    }
+
+    fetchData();
+  }, [currentPage, limit, search]);
 
   return (
     <div className="mt-6 flow-root">

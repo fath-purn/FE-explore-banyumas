@@ -7,6 +7,7 @@ import Link from "next/link";
 import Pagination from "@/app/ui/destinasi/pagination";
 import { Key, useState } from "react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { useEffect } from "react";
 
 async function getData({ currentPage, limit, search }: PageLimitSearch) {
   const res = await fetch(
@@ -23,7 +24,7 @@ async function getData({ currentPage, limit, search }: PageLimitSearch) {
   return data.data;
 }
 
-export default async function TableHotel({
+export default function TableHotel({
   currentPage,
   limit,
   search,
@@ -32,9 +33,18 @@ export default async function TableHotel({
   currentPage: number;
   search: string;
 }) {
-  const data = await getData({ currentPage, limit, search });
-  const dataHotel = data.hotel;
-  const totalPages = Math.ceil(data.pagination.total_items / 10);
+  const [dataHotel, setDataHotel] = useState<any[]>([]);
+  const [totalPages, setTotalPages] = useState<number>(0);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getData({ currentPage, limit, search });
+      setDataHotel(data.hotel);
+      setTotalPages(Math.ceil(data.pagination.total_items / 10));
+    }
+
+    fetchData();
+  }, [currentPage, limit, search]);
 
   return (
     <div className="mt-6 flow-root">
