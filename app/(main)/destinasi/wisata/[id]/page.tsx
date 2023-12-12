@@ -1,7 +1,6 @@
 import LinkHistory from "@/app/ui/linkHistory";
 import CardWisata from "@/app/ui/wisata/cardWisata";
 import Pagination from "@/app/ui/destinasi/pagination";
-import { dataKecamatan } from "@/app/(main)/destinasi/page";
 import { dataWisata } from "@/app/(main)/page";
 import Footer from "@/app/ui/footer";
 
@@ -27,10 +26,7 @@ export default function Page({ params, searchParams }: Props) {
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
 
-  const itemsPerPage = 10; // Change this to the desired number of items per page
-
-  const totalItems = dataKecamatan.data.length;
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const totalPages = 2;
 
   return (
     <div>
