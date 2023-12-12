@@ -15,9 +15,8 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import {Logo} from "@/app/ui/svg-image";
-import { useMediaQuery } from '@mui/material';
-
+import { Logo } from "@/app/ui/svg-image";
+import { useMediaQuery } from "@mui/material";
 
 const links = [
   { name: "Beranda", href: "/", icon: mdiHome, iconOutline: mdiHomeOutline },
@@ -49,14 +48,15 @@ const links = [
 
 export default function Navlink() {
   const pathname = usePathname();
-  const trimmedPathname = pathname.substring(0, pathname.indexOf('/', 1));
-  const isScreen = useMediaQuery('(max-width:880px)');
+  const trimmedPathname = pathname.substring(0, pathname.indexOf("/", 1));
+  // const isScreen = useMediaQuery('(max-width:880px)');
 
   return (
     <>
-      {isScreen && <Logo /> }
+      <Logo />
       {links.map((link) => {
-        const isActive = pathname === link.href || trimmedPathname === link.href;
+        const isActive =
+          pathname === link.href || trimmedPathname === link.href;
         return (
           <Link
             key={link.name}
@@ -80,4 +80,4 @@ export default function Navlink() {
       })}
     </>
   );
-    }
+}
