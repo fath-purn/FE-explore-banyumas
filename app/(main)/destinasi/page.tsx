@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 // ganti dengan api
-export const dataKecamatan = {
+const dataKecamatan = {
   jumlahKecamatan: 112,
   data: [
     {
