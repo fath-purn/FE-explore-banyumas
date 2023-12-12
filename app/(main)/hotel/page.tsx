@@ -165,7 +165,7 @@ export default function hotel() {
           </h3>
           <Link
             href="/"
-            className="text-neutral-500 text-base-md md:text-xl font-medium"
+            className="text-gray-500 text-base-md md:text-xl font-medium"
           >
             Lihat semua
           </Link>
@@ -183,7 +183,7 @@ export default function hotel() {
           </h3>
           <Link
             href="/"
-            className="text-neutral-500 text-base-md md:text-xl font-medium"
+            className="text-gray-500 text-base-md md:text-xl font-medium"
           >
             Lihat semua
           </Link>

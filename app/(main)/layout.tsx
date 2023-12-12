@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { poppins } from '@/app/ui/fonts';
 import '../globals.css';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '@/app/ui/navbar';
 
 export const metadata: Metadata = {

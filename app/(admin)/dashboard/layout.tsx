@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { poppins } from "@/app/ui/fonts";
 import "../../globals.css";
+import SideNav from "@/app/ui/admin/sidenav";
 
 export const metadata: Metadata = {
   title: {
@@ -18,7 +19,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}`}>{children}</body>
+      <body className={`${poppins.className}`}>
+        <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
+          <div className="w-full flex-none md:w-64">
+            <SideNav />
+          </div>
+          <div className="flex-grow p-6 md:overflow-y-auto md:p-12">
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
