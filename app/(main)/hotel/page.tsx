@@ -11,66 +11,6 @@ export const metadata: Metadata = {
   title: "Hotel",
 };
 
-// ganti dengan api
-const dataUlasan = [
-  {
-    id: 0,
-    user: "Ferina Nur W",
-    title: "Java Heritage",
-    comment:
-      "Cocok untuk staycation bersama keluarga, kebersihan terjamin dan nyaman. staffnya sangat ramah, parkirnya sangat luas dan tidak terlalu jauh dengan pusat kota yaa, overall sangat oke ",
-  },
-  {
-    id: 1,
-    user: "Purno",
-    title: "COR Hotel",
-    comment:
-      "Kamarnya luas, bersih nyaman, rasanya ingin disini terus awikwokwkwk  ",
-  },
-  {
-    id: 2,
-    user: "Nafidanisa",
-    title: "Dominic Hotel",
-    comment:
-      " Hotelnya bersih, staffnya juga ramah, kolam renang bersih, dapat sarapan pagi juga, sangat oke",
-  },
-  {
-    id: 3,
-    user: "Sindy",
-    title: "Dominic Hotel",
-    comment:
-      "Kamarnya luas dan bersih ya, disediakan air minum juga, sangat nyamannn ",
-  },
-  {
-    id: 4,
-    user: "Dela",
-    title: "Luminor Hotel",
-    comment:
-      "Dekat dengan alun-alun Purwokerto, aksesnya sangat mudah dijangkau karenna dipusat kota, sangat nyaman  ",
-  },
-  {
-    id: 5,
-    user: "Ferina Nur W",
-    title: "Java Heritage",
-    comment:
-      "Kamarnya luas dan bersih ya, disediakan air minum juga, sangat nyamannn ",
-  },
-  {
-    id: 6,
-    user: "Ferina Nur W",
-    title: "Java Heritage",
-    comment:
-      "Hotelnya bersih, staffnya juga ramah, kolam renang bersih, dapat sarapan pagi juga, sangat oke ",
-  },
-  {
-    id: 7,
-    user: "Dela",
-    title: "Java Heritage",
-    comment:
-      "Cocok untuk staycation bersama keluarga, kebersihan terjamin dan nyaman. staffnya sangat ramah, parkirnya sangat luas dan tidak terlalu jauh dengan pusat kota yaa, overall sangat oke  ",
-  },
-];
-
 export default function Hotel({
   searchParams,
 }: {
@@ -136,7 +76,7 @@ export default function Hotel({
         <hr className="bg-black" />
         <AddUlasan hotel={true} />
         <div className="">
-          <CardUlasan dataUlasan={dataUlasan} />
+          <CardUlasan />
         </div>
       </div>
       <Footer />
