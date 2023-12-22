@@ -62,6 +62,7 @@ export default function WisataPageDestinasi({
           <LinkHistory
             link={dataWisataKecamatan ? dataWisataKecamatan : "-"}
             destinasi={true}
+            nama={dataWisataKecamatan ? dataWisataKecamatan : "-"}
           />
         </div>
       </div>

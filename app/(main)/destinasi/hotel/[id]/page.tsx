@@ -58,6 +58,7 @@ export default function HotelPageDestinasi({
           <LinkHistory
             hotel={true}
             link={dataHotelKecamatan ? dataHotelKecamatan : "-"}
+            nama={dataHotelKecamatan ? dataHotelKecamatan : "-"}
             destinasi={true}
           />
         </div>
