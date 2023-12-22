@@ -8,7 +8,7 @@ export default function Navbar() {
   // const isScreenAbove768px = useMediaQuery('(min-width:881px)');
 
   return (
-    <div className="flex justify-center w-full bg-white fixed z-50 shadow-md">
+    <div className="flex justify-center w-full bg-white fixed bottom-0 md:bottom-auto z-50 shadow-md">
       <div className="w-full md:w-[95%] md:flex md:flex-row md:justify-between">
         {/* {isScreenAbove768px && <LogoFull /> } */}
         <LogoFull />

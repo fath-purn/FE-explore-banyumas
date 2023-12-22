@@ -4,7 +4,9 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Icon from "@mdi/react";
 import { mdiAccountCircleOutline } from "@mdi/js";
-import { Key } from "react";
+import { useState, useEffect } from "react";
+import { Ulasan } from "@/app/utils/definitions";
+import clsx from "clsx";
 
 export const responsive = {
   superLargeDesktop: {
@@ -27,10 +29,44 @@ export const responsive = {
   },
 };
 
-export default function cardUlasan({ dataUlasan}: { dataUlasan: any}) {
-  const product = dataUlasan.map((item: { id: number; user: string; title: string; comment: string; }) => (
-    <Ulasan key={item.id} id={item.id} name={item.user} title={item.title} comment={item.comment} />
-  ));
+const getData = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/ulasan`,
+    { cache: "no-store" }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  const data = await res.json();
+  return data.data;
+};
+
+export default function cardUlasan() {
+  const [dataUlasan, setDataUlasan] = useState<Ulasan[]>([])
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getData();
+
+      setDataUlasan(data);
+    }
+
+    fetchData();
+  }, []);
+
+  const product = dataUlasan.map(
+    (item: Ulasan) => (
+      <UlasanCard
+        key={item.id}
+        id={item.id}
+        name={item.nama}
+        title={item.Hotel ? item.Hotel : (item.wisata ? item.wisata : '-')}
+        comment={item.ulasan}
+      />
+    )
+  );
 
   return (
     <div className="gap-3">
@@ -50,19 +86,34 @@ export default function cardUlasan({ dataUlasan}: { dataUlasan: any}) {
   );
 }
 
-export function Ulasan(props: {
+export function UlasanCard(props: {
   id: number;
   name: string;
   title: string;
   comment: string;
 }) {
+  const isTextLong = props.name.length > 15;
   return (
-    <div key={props.id} className="rounded-2xl py-5 px-5 border border-gray-400 shadow-md my-10 mx-[6px] min-h-[369px]">
+    <div
+      key={props.id}
+      className="rounded-2xl py-5 px-5 border border-gray-400 shadow-md my-10 mx-[6px] min-h-[369px]"
+    >
       <div className="flex flex-row items-center">
-        <Icon path={mdiAccountCircleOutline} title="User Profile" size={1.3} color={"#FE6984"}/>
-        <h2 className="ml-3 text-neutral-700 text-[25px] font-medium">
-          {props.name}
-        </h2>
+        <Icon
+          path={mdiAccountCircleOutline}
+          title="User Profile"
+          size={1.3}
+          color={"#FE6984"}
+        />
+        <h2
+      className={clsx("ml-3", "text-neutral-700", {
+        "text-[25px]": !isTextLong, // Gunakan ukuran normal jika teks tidak panjang
+        "text-sm": isTextLong, // Gunakan ukuran yang lebih kecil jika teks panjang
+        "font-medium": true, // Atau gunakan properti font sesuai kebutuhan Anda
+      })}
+    >
+      {props.name}
+    </h2>
       </div>
       <h2 className="text-neutral-700 text-xl font-medium mt-3">
         {props.title}

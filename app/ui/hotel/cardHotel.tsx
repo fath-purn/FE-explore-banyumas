@@ -1,42 +1,92 @@
+'use client'
+
 import Image from "next/image";
 import Icon from "@mdi/react";
 import { mdiCityVariant } from "@mdi/js";
 import Start from "../star";
 import Fasilitas from "./fasilitas";
 import { CardButton } from "@/app/ui/button";
+import { useState, useEffect } from "react";
+import { PageLimitSearch } from "@/app/utils/definitions";
 
-interface HotelProps {
-  hotel: {
-    id: string;
-    nama: string;
-    src: string;
-    start: number;
-    fasilitas: {
-      wifi: boolean;
-      bar: boolean;
-      roomService: boolean;
-      breakfast: boolean;
-      restaurant: boolean;
-    };
-    price: number;
-  }[];
+async function getData({
+  currentPage,
+  limit,
+  search,
+  destinasi,
+  id,
+}: PageLimitSearch) {
+  if (destinasi) {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/kecamatan/hotel/${id}`,
+      { cache: "no-store" }
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    const data = await res.json();
+    return data.data;
+  }
+
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/hotel?page=${currentPage}&limit=${limit}&search=${search}`,
+    { cache: "no-store" }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  
+  const data = await res.json();
+  return data.data;
 }
 
-export default function CardHotel({hotel}: HotelProps) {
+export default function CardHotel({
+  currentPage,
+  limit,
+  search,
+  destinasi,
+  id,
+}: {
+  limit: number;
+  currentPage: number;
+  search: string;
+  id?: string;
+  destinasi?: boolean;
+}) {
+  const [dataHotel, setDataHotel] = useState<any[]>([]);
+  const [totalPages, setTotalPages] = useState<number>(0);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getData({ currentPage, limit, search, destinasi, id });
+
+      if (destinasi) {
+        setDataHotel(data.kecamatan.hotel);
+      } else {
+        setDataHotel(data.hotel);
+      }
+    }
+
+    fetchData();
+  }, [currentPage, limit, search, destinasi, id]);
+
   return (
     <>
-      {hotel.map((hotel, index) => {
+      {dataHotel?.map((hotel, index) => {
         return (
           <div
             key={index}
-            className="flex flex-row justify-start md:justify-between md:flex-col bg-white rounded-lg shadow-md mt-3 md:max-w-[237px]"
+            className="flex flex-row justify-start md:flex-col bg-white rounded-lg shadow-md mt-3 md:max-w-[237px] h-full md:max-h-[442px]"
           >
             <Image
-              src={hotel.src}
+              src={hotel.gambar[0]}
               alt={hotel.nama}
               width={237}
               height={217}
-              className="object-cover rounded-lg max-w-[50%] md:max-w-full"
+              className="object-cover rounded-lg max-w-[50%] md:max-w-full max-h-[217px]"
             />
             <div className="flex items-center justify-center my-3 ml-1 md:ml-0 w-[50%] md:w-full">
               <div className="w-[90%]">
@@ -49,7 +99,7 @@ export default function CardHotel({hotel}: HotelProps) {
                   color="black"
                   className="inline mr-2"
                 />
-                <Start jumlahBintang={hotel.start} />
+                <Start jumlahBintang={4} />
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 items-center justify-between mt-3 w-full">
                   <Fasilitas fasilitas={hotel.fasilitas} />
                 </div>

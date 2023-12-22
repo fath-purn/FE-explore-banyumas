@@ -342,7 +342,7 @@ export default function LoginForm() {
               <h2 className=" font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
                 Fasilitas
               </h2>
-              <div className="flex flex-row justify-evenly">
+              <div className="flex flex-col justify-start">
                 {fasilitas.map((item, index) => (
                   <div
                     role="button"
@@ -395,8 +395,11 @@ export default function LoginForm() {
             </nav>
           </div>
         </div>
+        <div className="flex justify-end gap-3">
+
         <CancelButton />
         <LoginButton />
+        </div>
         <div className="flex h-8 items-end space-x-1">
           {code !== undefined && (
             <>

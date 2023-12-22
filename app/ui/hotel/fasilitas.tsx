@@ -15,11 +15,11 @@ import {
 
 type Props = {
   fasilitas: {
-    wifi: boolean;
-    bar: boolean;
-    roomService: boolean;
-    breakfast: boolean;
-    restaurant: boolean;
+    wifi?: boolean;
+    bar?: boolean;
+    roomService?: boolean;
+    breakfast?: boolean;
+    restaurant?: boolean;
     pool?: boolean;
     parkir?: boolean;
     bathrom?: boolean;

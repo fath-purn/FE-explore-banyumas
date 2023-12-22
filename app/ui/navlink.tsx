@@ -53,7 +53,6 @@ export default function Navlink() {
 
   return (
     <>
-      <Logo />
       {links.map((link) => {
         const isActive =
           pathname === link.href || trimmedPathname === link.href;

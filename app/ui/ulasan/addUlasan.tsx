@@ -1,19 +1,41 @@
 "use client";
 
-import { useState } from "react";
-import clsx from "clsx";
+import { useState, useEffect } from "react";
 
 interface Props {
   wisata?: boolean;
   hotel?: boolean;
 }
 
-const data = [
-  { id: 1, nama: "Wisata 1" },
-  { id: 2, nama: "Wisata 2" },
-  { id: 3, nama: "Wisata 3" },
-  { id: 4, nama: "Wisata 4" },
-];
+async function getData({wisata
+}: {wisata?:boolean}) {
+  if (wisata) {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/wisata`,
+      { cache: "no-store" }
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    const data = await res.json();
+    return data.data;
+  }
+
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/hotel`,
+    { cache: "no-store" }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  
+  const data = await res.json();
+  return data.data;
+}
+
 
 export default function AddUlasan({ wisata, hotel }: Props): JSX.Element {
   const [ulasan, setUlasan] = useState(false);
@@ -21,19 +43,31 @@ export default function AddUlasan({ wisata, hotel }: Props): JSX.Element {
   const [wisataId, setWisataId] = useState<null | number>(null);
   const [hotelId, setHotelId] = useState<null | number>(null);
   const [ulasanText, setUlasanText] = useState("");
+  const [data, setData] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getData({ wisata });
+      if (wisata) {
+        setData(data);
+      } else {
+        setData(data);
+      }
+    }
+
+    fetchData();
+  }, [wisata]);
 
   const handleSubmit = () => {
+    const formData = new FormData();
+  
+    formData.append("nama", nama);
+    formData.append(wisata ? "wisataId" : "hotelId", String(wisata ? wisataId : hotelId));
+    formData.append("ulasan", ulasanText);
+  
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/ulasan`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        nama: nama,
-        wisataId: wisataId,
-        hotelId: hotelId,
-        ulasan: ulasanText,
-      }),
+      body: formData,
     })
       .then((res) => res.json())
       .then((res) => {
@@ -46,14 +80,12 @@ export default function AddUlasan({ wisata, hotel }: Props): JSX.Element {
       })
       .catch((err) => console.log(err));
   };
-
+  
   const handleChange = (value: boolean) => {
     setUlasan(value);
   };
 
   const handleId = (value: number) => {
-    console.log("asd", value);
-
     if (wisata) {
       setWisataId(value);
     } else if (hotel) {
@@ -118,7 +150,7 @@ export default function AddUlasan({ wisata, hotel }: Props): JSX.Element {
                       <option value="">Choose an option</option>
                       {data.map((item) => (
                         <option key={item.id} value={item.id}>
-                          {item.id} {item.nama}
+                          {item.nama}
                         </option>
                       ))}
                     </select>

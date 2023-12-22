@@ -5,7 +5,6 @@ import { Suspense } from 'react';
 import Table from "@/app/ui/admin/wisata/table";
 import Pagination from "@/app/ui/destinasi/pagination";
 import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
-// import { getData } from "@/app/utils/actions";
 
 export const metadata: Metadata = {
   title: "Dashboard ",
@@ -24,11 +23,6 @@ export default function Page({
   const currentPage = Number(searchParams?.page) || 1;
   const search = searchParams?.search || "";
 
-  const totalPages = 10;
-  // console.log(`limit: ${limit}, currentPage: ${currentPage}, search: ${search}`)
-  // const dataWisata = await getData({ currentPage, limit, search });
-  // console.log(dataWisata, 'data wisata')
-
   return (
     <div className="">
       <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
@@ -38,9 +32,6 @@ export default function Page({
       <Suspense key={limit + currentPage} fallback={<InvoicesTableSkeleton />}>
         <Table limit={limit} currentPage={currentPage} search={search} />
       </Suspense>
-      {/* <div className="mt-5 flex w-full justify-center">
-        <Pagination />
-      </div> */}
     </div>
   );
 }
