@@ -55,7 +55,7 @@ export default function Page({
             dibidang perhotelan
           </p>
           <Link
-            href="/"
+            href="/destinasi"
             className="text-gray-500 text-base font-medium mt-5 underline"
           >
             Selengkapnya

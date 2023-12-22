@@ -42,7 +42,7 @@ export default function Hotel({
             Hotel Terbaik
           </h3>
           <Link
-            href="/"
+            href="/destinasi"
             className="text-gray-500 text-base-md md:text-xl font-medium"
           >
             Lihat semua
@@ -60,7 +60,7 @@ export default function Hotel({
             Hotel Populer
           </h3>
           <Link
-            href="/"
+            href="/destinasi"
             className="text-gray-500 text-base-md md:text-xl font-medium"
           >
             Lihat semua

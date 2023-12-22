@@ -119,9 +119,9 @@ export default function AddUlasan({ wisata, hotel }: Props): JSX.Element {
             data-dialog-mount="opacity-100 translate-y-0 scale-100"
             data-dialog-unmount="opacity-0 -translate-y-28 scale-90 pointer-events-none"
             data-dialog-transition="transition-all duration-300"
-            className="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+            className="relative m-4 w-[90%] md:w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
           >
-            <div className="flex items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
+            <div className="flex mt-5 items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
               Tambahkan ulasan di {wisata ? "wisata" : "hotel"}
             </div>
             <div className="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t border-t-blue-gray-100 text-blue-gray-500">

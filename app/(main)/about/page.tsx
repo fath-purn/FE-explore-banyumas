@@ -46,14 +46,14 @@ export default function about() {
           <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col justify-between gap-3">
               <Image
-                src="https://via.placeholder.com/337x232"
+                src="https://ik.imagekit.io/fathpurn/11.png?updatedAt=1703228784947"
                 alt="Destinasi"
                 width={337}
                 height={232}
                 className="rounded-lg shadow-sm min-h-[230px] object-cover"
               />
               <Image
-                src="https://via.placeholder.com/337x232"
+                src="https://ik.imagekit.io/fathpurn/12.png?updatedAt=1703228784963"
                 alt="Destinasi"
                 width={337}
                 height={232}
@@ -61,11 +61,11 @@ export default function about() {
               />
             </div>
             <Image
-              src="https://via.placeholder.com/281x475"
+              src="https://ik.imagekit.io/fathpurn/13.png?updatedAt=1703228784964"
               alt="Destinasi"
               width={281}
               height={475}
-              className="rounded-lg shadow-sm h-full object-cover"
+              className="rounded-lg shadow-sm min-h-[475px] object-cover min-w-[281px]"
             />
           </div>
         </div>

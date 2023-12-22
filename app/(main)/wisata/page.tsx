@@ -42,7 +42,7 @@ export default function Wisata({
             Wisata Terdekat
           </h3>
           <Link
-            href="/"
+            href="/destinasi"
             className="text-gray-500 text-base-md md:text-xl font-medium"
           >
             Lihat semua
@@ -60,7 +60,7 @@ export default function Wisata({
             Wisata paling banyak pengunjung
           </h3>
           <Link
-            href="/"
+            href="/destinasi"
             className="text-gray-500 text-base-md md:text-xl font-medium"
           >
             Lihat semua
