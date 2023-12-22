@@ -43,7 +43,7 @@ const getData = async () => {
   return data.data;
 };
 
-export default function cardUlasan() {
+export default function CardUlasan() {
   const [dataUlasan, setDataUlasan] = useState<Ulasan[]>([])
 
   useEffect(() => {
