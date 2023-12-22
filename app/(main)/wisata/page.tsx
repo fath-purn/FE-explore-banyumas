@@ -11,131 +11,19 @@ export const metadata: Metadata = {
   title: "Wisata",
 };
 
-// ganti dengan api
-const dataUlasan = [
-  {
-    id: 0,
-    user: "Ferina Nur W",
-    title: "Java Heritage",
-    comment:
-      "Cocok untuk staycation bersama keluarga, kebersihan terjamin dan nyaman. staffnya sangat ramah, parkirnya sangat luas dan tidak terlalu jauh dengan pusat kota yaa, overall sangat oke ",
-  },
-  {
-    id: 1,
-    user: "Purno",
-    title: "COR Hotel",
-    comment:
-      "Kamarnya luas, bersih nyaman, rasanya ingin disini terus awikwokwkwk  ",
-  },
-  {
-    id: 2,
-    user: "Nafidanisa",
-    title: "Dominic Hotel",
-    comment:
-      " Hotelnya bersih, staffnya juga ramah, kolam renang bersih, dapat sarapan pagi juga, sangat oke",
-  },
-  {
-    id: 3,
-    user: "Sindy",
-    title: "Dominic Hotel",
-    comment:
-      "Kamarnya luas dan bersih ya, disediakan air minum juga, sangat nyamannn ",
-  },
-  {
-    id: 4,
-    user: "Dela",
-    title: "Luminor Hotel",
-    comment:
-      "Dekat dengan alun-alun Purwokerto, aksesnya sangat mudah dijangkau karenna dipusat kota, sangat nyaman  ",
-  },
-  {
-    id: 5,
-    user: "Ferina Nur W",
-    title: "Java Heritage",
-    comment:
-      "Kamarnya luas dan bersih ya, disediakan air minum juga, sangat nyamannn ",
-  },
-  {
-    id: 6,
-    user: "Ferina Nur W",
-    title: "Java Heritage",
-    comment:
-      "Hotelnya bersih, staffnya juga ramah, kolam renang bersih, dapat sarapan pagi juga, sangat oke ",
-  },
-  {
-    id: 7,
-    user: "Dela",
-    title: "Java Heritage",
-    comment:
-      "Cocok untuk staycation bersama keluarga, kebersihan terjamin dan nyaman. staffnya sangat ramah, parkirnya sangat luas dan tidak terlalu jauh dengan pusat kota yaa, overall sangat oke  ",
-  },
-];
+export default function Wisata({
+  searchParams,
+}: {
+  searchParams?: {
+    limit?: number;
+    page?: string;
+    search?: string;
+  };
+}) {
+  const limit = Number(searchParams?.limit) || 5;
+  const currentPage = Number(searchParams?.page) || 1;
+  const search = searchParams?.search || "";
 
-// ganti dengan api
-const dataWisata = [
-  {
-    id: "0",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "1",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "2",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "3",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "4",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-];
-
-export default function wisata() {
   return (
     <main>
       <div className="h-[617px]">
@@ -161,7 +49,7 @@ export default function wisata() {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardWisata wisata={dataWisata} />
+          <CardWisata limit={limit} currentPage={currentPage} search={search} />
         </div>
       </div>
 
@@ -179,7 +67,7 @@ export default function wisata() {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardWisata wisata={dataWisata} />
+          <CardWisata limit={limit} currentPage={currentPage} search={search} />
         </div>
       </div>
       {/* Ulasan */}
@@ -187,7 +75,7 @@ export default function wisata() {
         <hr className="bg-black" />
         <AddUlasan wisata={true} />
         <div className="">
-          <CardUlasan dataUlasan={dataUlasan} />
+          <CardUlasan />
         </div>
       </div>
       <Footer />

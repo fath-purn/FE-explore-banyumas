@@ -6,152 +6,21 @@ import Link from "next/link";
 import CardHotel from "@/app/ui/hotel/cardHotel";
 import CardWisata from "@/app/ui/wisata/cardWisata";
 import Footer from "@/app/ui/footer";
+import { Suspense } from 'react';
+import { CardSkeleton } from "../ui/skeletons";
 
-// panggil dari api
-export const dataWisata = [
-  {
-    id: "0",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "1",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "2",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "3",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-  {
-    id: "4",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    price: 500000,
-    keterangan: {
-      jarak: 10,
-      buka: "08:00",
-      tutup: "17:00",
-      akomodasi: 12,
-    },
-  },
-];
-
-export const dataHotel = [
-  {
-    id: "0",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    start: 5,
-    fasilitas: {
-      wifi: true,
-      bar: false,
-      roomService: true,
-      breakfast: true,
-      restaurant: true,
-    },
-    price: 500000,
-  },
-  {
-    id: "1",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    start: 5,
-    fasilitas: {
-      wifi: true,
-      bar: false,
-      roomService: true,
-      breakfast: true,
-      restaurant: true,
-    },
-    price: 500000,
-  },
-  {
-    id: "2",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    start: 5,
-    fasilitas: {
-      wifi: true,
-      bar: false,
-      roomService: true,
-      breakfast: true,
-      restaurant: true,
-    },
-    price: 500000,
-  },
-  {
-    id: "3",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    start: 5,
-    fasilitas: {
-      wifi: true,
-      bar: false,
-      roomService: true,
-      breakfast: true,
-      restaurant: true,
-    },
-    price: 500000,
-  },
-  {
-    id: "4",
-    nama: "Java Heritage",
-    src: "https://via.placeholder.com/237x217",
-    start: 5,
-    fasilitas: {
-      wifi: true,
-      bar: false,
-      roomService: true,
-      breakfast: true,
-      restaurant: true,
-    },
-    price: 500000,
-  },
-];
-
-export default async function Page({
+export default function Page({
   searchParams,
 }: {
   searchParams?: {
-    query?: string;
+    limit?: number;
+    page?: string;
+    search?: string;
   };
 }) {
-  const query = searchParams?.query || ""; // lanjutkan ke database
+  const limit = Number(searchParams?.limit) || 5;
+  const currentPage = Number(searchParams?.page) || 1;
+  const search = searchParams?.search || "";
 
   return (
     <main>
@@ -210,7 +79,9 @@ export default async function Page({
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardHotel hotel={dataHotel} />
+          <Suspense fallback={<CardSkeleton />}>
+            <CardHotel limit={limit} currentPage={currentPage} search={search} />
+          </Suspense>
         </div>
       </div>
       {/* Hotel terbaik di Banyumas */}
@@ -224,7 +95,9 @@ export default async function Page({
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardWisata wisata={dataWisata} />
+          <Suspense fallback={<CardSkeleton />}>
+            <CardWisata limit={limit} currentPage={currentPage} search={search} />
+          </Suspense>
         </div>
       </div>
       <Footer />

@@ -13,13 +13,13 @@ const teamMembersTop = [
     name: "Muhammad Taufiq Hidayat",
     imageUrl: "https://via.placeholder.com/405x426",
   },
-  { name: "John Doe", imageUrl: "https://via.placeholder.com/405x426" },
-  { name: "Jane Doe", imageUrl: "https://via.placeholder.com/405x426" },
+  { name: "Fatkhurrohman Purnomo", imageUrl: "https://via.placeholder.com/405x426" },
+  { name: "Amalia Tri Rahayu", imageUrl: "https://via.placeholder.com/405x426" },
 ];
 
 const teamMembersBott = [
-  { name: "John Doe", imageUrl: "https://via.placeholder.com/405x426" },
-  { name: "Jane Doe", imageUrl: "https://via.placeholder.com/405x426" },
+  { name: "Ferina Nur Wahyumi", imageUrl: "https://via.placeholder.com/405x426" },
+  { name: "Nafidanisa", imageUrl: "https://via.placeholder.com/405x426" },
 ];
 
 export default function about() {

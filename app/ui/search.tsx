@@ -9,14 +9,15 @@ export default function Search({ placeholder }: { placeholder: string }) {
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  // error ketika user selesai mengetik layar akan kembali ke atas. kemungkinan karena replace membuar url baru dan mereload page.
-  // solusi: gunakan modal. jadi saat user klik search akan ada modal dan mengetik disitu
   const handleSearch = useDebouncedCallback((term) => {
+    console.log(`Searching... ${term}`);
+   
     const params = new URLSearchParams(searchParams);
+    params.set('page', '1');
     if (term) {
-      params.set('query', term);
+      params.set('search', term);
     } else {
-      params.delete('query');
+      params.delete('search');
     }
     replace(`${pathname}?${params.toString()}`);
   }, 300);

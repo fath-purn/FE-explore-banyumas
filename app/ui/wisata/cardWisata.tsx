@@ -1,37 +1,88 @@
+"use client";
+
 import Image from "next/image";
 import { CardButton } from "@/app/ui/button";
 import Keterangan from "./keterangan";
+import { useState, useEffect } from "react";
+import { PageLimitSearch } from "@/app/utils/definitions";
 
-interface WisataProps {
-  wisata: {
-    id: string;
-    nama: string;
-    src: string;
-    price: number;
-    keterangan: {
-      jarak: number;
-      buka: string;
-      tutup: string;
-      akomodasi: number;
-    };
-  }[];
+async function getData({
+  currentPage,
+  limit,
+  search,
+  destinasi,
+  id,
+}: PageLimitSearch) {
+  if (destinasi) {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/kecamatan/wisata/${id}`,
+      { cache: "no-store" }
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    const data = await res.json();
+    return data.data;
+  }
+
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/wisata?page=${currentPage}&limit=${limit}&search=${search}`,
+    { cache: "no-store" }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  
+  const data = await res.json();
+  return data.data;
 }
 
-export default function CardWisata({ wisata}: WisataProps ): JSX.Element  {
+export default async function TableWisata({
+  currentPage,
+  limit,
+  search,
+  id,
+  destinasi,
+}: {
+  limit: number;
+  currentPage: number;
+  search: string;
+  id?: string;
+  destinasi?: boolean;
+}) {
+  const [dataWisata, setDataWisata] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getData({ currentPage, limit, search, destinasi, id });
+
+      if (destinasi) {
+        setDataWisata(data.kecamatan.wisata);
+      } else {
+        setDataWisata(data.wisataObject);
+      }
+    }
+
+    fetchData();
+  }, [currentPage, limit, search, destinasi, id]);
+
   return (
     <>
-      {wisata.map((wisata, index) => {
+      {dataWisata?.map((wisata, index) => {
         return (
           <div
-            key={index}
-            className="flex flex-row justify-start md:justify-between md:flex-col bg-white rounded-lg shadow-md mt-3 md:max-w-[237px]"
+            key={wisata.id}
+            className="flex flex-row justify-start md:flex-col bg-white rounded-lg shadow-md mt-3 md:max-w-[237px] h-full md:max-h-[442px]"
           >
             <Image
-              src={wisata.src}
+              src={wisata.gambar[0]}
               alt={wisata.nama}
               width={237}
               height={217}
-              className="rounded-lg object-cover max-w-[50%] md:max-w-full"
+              className="rounded-lg object-cover max-w-[50%] md:max-w-full max-h-[217px]"
             />
             <div className="flex items-center justify-center my-3 ml-1 md:ml-0 w-[50%] md:w-full">
               <div className="w-[90%]">
@@ -58,3 +109,4 @@ export default function CardWisata({ wisata}: WisataProps ): JSX.Element  {
     </>
   );
 }
+
