@@ -22,7 +22,7 @@ async function getDataById({ params }: { params: string }) {
   }
 
   const data = await res.json();
-  console.log(data.data, 'atas')
+  console.log(data.data, "atas");
   return data.data;
 }
 
@@ -57,7 +57,10 @@ export default function Page({
     <div className="mt-12 md:mt-0">
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-row gap-1 w-[90%] md:w-[90%] mt-10">
-          <LinkHistory link="wisata" nama={dataWisataById?.nama ? dataWisataById?.nama : 'Wisata'} />
+          <LinkHistory
+            link="wisata"
+            nama={dataWisataById?.nama ? dataWisataById?.nama : "Wisata"}
+          />
         </div>
         <h1 className="text-black text-[40px] font-semibold text-center mt-10">
           Lokawisata {dataWisataById?.nama}
@@ -179,13 +182,7 @@ export default function Page({
           <h2 className="text-black text-[25px] font-semibold mb-5">
             Hotel terdekat lainnya
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto mt-5 gap-3">
-            <CardHotel
-              limit={limit}
-              currentPage={currentPage}
-              search={search}
-            />
-          </div>
+          <CardHotel limit={limit} currentPage={currentPage} search={search} />
         </div>
       </div>
       <Footer />

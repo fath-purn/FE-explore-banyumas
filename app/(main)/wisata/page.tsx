@@ -42,15 +42,13 @@ export default function Wisata({
             Wisata Terdekat
           </h3>
           <Link
-            href="/destinasi"
+            href="/wisata/all"
             className="text-gray-500 text-base-md md:text-xl font-medium"
           >
             Lihat semua
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardWisata limit={limit} currentPage={currentPage} search={search} />
-        </div>
+        <CardWisata limit={limit} currentPage={currentPage} search={search} />
       </div>
 
       {/* Wisata paling banyak pengunjung */}
@@ -60,15 +58,13 @@ export default function Wisata({
             Wisata paling banyak pengunjung
           </h3>
           <Link
-            href="/destinasi"
+            href="/wisata/all"
             className="text-gray-500 text-base-md md:text-xl font-medium"
           >
             Lihat semua
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardWisata limit={limit} currentPage={currentPage} search={search} />
-        </div>
+        <CardWisata limit={limit} currentPage={currentPage} search={search} />
       </div>
       {/* Ulasan */}
       <div className="w-full mt-10">

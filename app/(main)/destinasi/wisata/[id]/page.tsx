@@ -73,15 +73,13 @@ export default function WisataPageDestinasi({
           </h1>
         </div>
         <div className="w-[95%]">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto mt-5 gap-3">
-            <CardWisata
-              currentPage={currentPage}
-              limit={limit}
-              search={search}
-              destinasi={true}
-              id={params.id}
-            />
-          </div>
+          <CardWisata
+            currentPage={currentPage}
+            limit={limit}
+            search={search}
+            destinasi={true}
+            id={params.id}
+          />
         </div>
       </div>
       {/* pagination */}

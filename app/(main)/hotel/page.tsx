@@ -42,15 +42,13 @@ export default function Hotel({
             Hotel Terbaik
           </h3>
           <Link
-            href="/destinasi"
+            href="/hotel/all"
             className="text-gray-500 text-base-md md:text-xl font-medium"
           >
             Lihat semua
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardHotel limit={limit} currentPage={currentPage} search={search} />
-        </div>
+        <CardHotel limit={limit} currentPage={currentPage} search={search} />
       </div>
 
       {/* Hotel Populer */}
@@ -60,15 +58,13 @@ export default function Hotel({
             Hotel Populer
           </h3>
           <Link
-            href="/destinasi"
+            href="/hotel/all"
             className="text-gray-500 text-base-md md:text-xl font-medium"
           >
             Lihat semua
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto w-[95%] mt-5 gap-3">
-          <CardHotel limit={limit} currentPage={currentPage} search={search} />
-        </div>
+        <CardHotel limit={limit} currentPage={currentPage} search={search} />
       </div>
 
       {/* Ulasan */}

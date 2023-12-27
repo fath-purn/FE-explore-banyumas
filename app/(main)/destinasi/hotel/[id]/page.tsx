@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import LinkHistory from "@/app/ui/linkHistory";
 import CardHotel from "@/app/ui/hotel/cardHotel";
@@ -70,15 +70,13 @@ export default function HotelPageDestinasi({
           </h1>
         </div>
         <div className="w-[95%]">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto mt-5 gap-3">
-            <CardHotel
-              currentPage={currentPage}
-              limit={limit}
-              search={search}
-              destinasi={true}
-              id={params.id}
-            />
-          </div>
+          <CardHotel
+            currentPage={currentPage}
+            limit={limit}
+            search={search}
+            destinasi={true}
+            id={params.id}
+          />
         </div>
       </div>
       {/* pagination */}

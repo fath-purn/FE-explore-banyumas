@@ -70,7 +70,10 @@ export default function Page({
     <div className="mt-12 md:mt-0">
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-row gap-1 w-[90%] md:w-[90%] mt-10">
-          <LinkHistory link="hotel" nama={dataHotelById?.nama ? dataHotelById?.nama : 'Hotel'} />
+          <LinkHistory
+            link="hotel"
+            nama={dataHotelById?.nama ? dataHotelById?.nama : "Hotel"}
+          />
         </div>
         <h1 className="text-black text-[40px] font-semibold text-center mt-10">
           {dataHotelById?.nama}
@@ -189,13 +192,7 @@ export default function Page({
           <h2 className="text-black text-[25px] font-semibold mb-5">
             Wisata terdekat lainnya
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center items-center m-auto mt-5 gap-3">
-            <CardWisata
-              limit={limit}
-              currentPage={currentPage}
-              search={search}
-            />
-          </div>
+          <CardWisata limit={limit} currentPage={currentPage} search={search} />
         </div>
       </div>
       <Footer />

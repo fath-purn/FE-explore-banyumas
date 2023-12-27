@@ -98,3 +98,12 @@ export interface Ulasan {
   wisata?: string;
   Hotel?: string;
 }
+
+export interface CardWisataAndHotel {
+  limit: number;
+  currentPage: number;
+  search: string;
+  id?: string;
+  destinasi?: boolean;
+  pagination?: boolean;
+}
