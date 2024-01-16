@@ -35,7 +35,7 @@ export default async function TableKecamatan({
   useEffect(() => {
     async function fetchData() {
       const data = await getData({ currentPage, limit, search });
-      setDataKecamatan(data);
+      setDataKecamatan(data.kecamatan);
     }
 
     fetchData();

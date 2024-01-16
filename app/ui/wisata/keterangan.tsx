@@ -40,10 +40,6 @@ const keteranganWisata = [
     icon: mdiParking,
     text: (keterangan: any) => (keterangan.parkir ? "Parkir Luas" : ""),
   },
-  {
-    icon: mdiCar,
-    text: (keterangan: any) => (keterangan.tiket ? "Tiket" : ""),
-  },
 ];
 
 export default function Keterangan({ keterangan, detail }: Props): JSX.Element {
