@@ -75,7 +75,7 @@ export default function Page({
             Hotel Terbaik di Banyumas
           </h3>
           <Link
-            href="/hotel"
+            href="/hotel/all"
             className="text-gray-500 text-base-md md:text-xl font-medium"
           >
             Lihat semua
@@ -92,7 +92,7 @@ export default function Page({
             Wisata Terbaik di Banyumas
           </h3>
           <Link
-            href="/wisata"
+            href="/wisata/all"
             className="text-gray-500 text-base-md md:text-xl font-medium"
           >
             Lihat semua

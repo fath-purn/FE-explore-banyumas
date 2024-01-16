@@ -31,7 +31,7 @@ export default function Footer() {
             <div className="w-[10%] flex justify-center">
               <span className="w-[5px] h-full bg-white hidden md:block"></span>
             </div>
-            <div className="w-full md:w-[45%] flex flex-col items-center justify-center mt-5">
+            <div className="w-full md:w-[45%] flex flex-col items-center justify-center">
               <h6 className="text-white text-[18px] text-center font-semibold mb-3">
                 Galeri
               </h6>

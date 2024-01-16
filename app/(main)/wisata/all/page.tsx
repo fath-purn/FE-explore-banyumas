@@ -18,7 +18,7 @@ export default function WisataAll({
     search?: string;
   };
 }) {
-  const limit = Number(searchParams?.limit) || 5;
+  const limit = Number(searchParams?.limit) || 20;
   const currentPage = Number(searchParams?.page) || 1;
   const search = searchParams?.search || "";
 

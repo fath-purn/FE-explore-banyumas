@@ -11,15 +11,15 @@ export const metadata: Metadata = {
 const teamMembersTop = [
   {
     name: "Muhammad Taufiq Hidayat",
-    imageUrl: "https://via.placeholder.com/405x426",
+    imageUrl: "https://ik.imagekit.io/fathpurn/topik.png?updatedAt=1705373136915",
   },
-  { name: "Fatkhurrohman Purnomo", imageUrl: "https://via.placeholder.com/405x426" },
-  { name: "Amalia Tri Rahayu", imageUrl: "https://via.placeholder.com/405x426" },
+  { name: "Fatkhurrohman Purnomo", imageUrl: "https://ik.imagekit.io/fathpurn/purno.png?updatedAt=1705373136747" },
+  { name: "Amalia Tri Rahayu", imageUrl: "https://ik.imagekit.io/fathpurn/amal.png?updatedAt=1705373136926" },
 ];
 
 const teamMembersBott = [
-  { name: "Ferina Nur Wahyumi", imageUrl: "https://via.placeholder.com/405x426" },
-  { name: "Nafidanisa", imageUrl: "https://via.placeholder.com/405x426" },
+  { name: "Ferina Nur Wahyumi", imageUrl: "https://ik.imagekit.io/fathpurn/ferina.png?updatedAt=1705373136995" },
+  { name: "Nafidanisa", imageUrl: "https://ik.imagekit.io/fathpurn/nana.png?updatedAt=1705373136638" },
 ];
 
 export default function about() {

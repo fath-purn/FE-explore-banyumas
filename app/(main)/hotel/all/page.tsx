@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import TopBaner from "@/app/ui/topBaner";
-import Search from "@/app/ui/search";
 import CardHotel from "@/app/ui/hotel/cardHotel";
-import Link from "next/link";
 import Footer from "@/app/ui/footer";
 import CardUlasan from "@/app/ui/cardUlasan";
 import AddUlasan from "@/app/ui/ulasan/addUlasan";
@@ -21,7 +18,7 @@ export default function Hotel({
     search?: string;
   };
 }) {
-  const limit = Number(searchParams?.limit) || 5;
+  const limit = Number(searchParams?.limit) || 20;
   const currentPage = Number(searchParams?.page) || 1;
   const search = searchParams?.search || "";
 

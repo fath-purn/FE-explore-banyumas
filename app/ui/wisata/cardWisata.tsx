@@ -105,13 +105,13 @@ export default async function TableWisata({
             </div>
           );
         })}
+        </div>
         {/* pagination */}
         {pagination && (
           <div className="flex flex-row justify-center items-center mt-10">
             <Pagination totalPages={totalPages} />
           </div>
         )}
-      </div>
     </div>
   );
 }
