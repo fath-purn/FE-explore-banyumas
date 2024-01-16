@@ -150,7 +150,7 @@ export default function TableHotel({
                       />
                     </td>
                     <td className="whitespace-nowrap px-3 py-3 underline">
-                      <Link href={`/wisata/${data.id}`}>{data.nama}</Link>
+                      <Link href={`/hotel/${data.id}`}>{data.nama}</Link>
                     </td>
                     <td className="whitespace-nowrap px-3 py-3">
                       {data.kecamatan}
