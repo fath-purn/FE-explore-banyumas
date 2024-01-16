@@ -29,7 +29,8 @@ export default function CardDestinasi({
             >
               <div>
                 <Image
-                  src={"https://via.placeholder.com/405x426"}
+                  src={"https://ik.imagekit.io/fathpurn/1705385124461_Oqbr0qcpnw.png"}
+                  // src={data.hotel.representativeImage ? data.hotel.representativeImage : "https://via.placeholder.com/405x426"}
                   alt={`hotel ${data.nama}`}
                   width={280}
                   height={280}
@@ -46,7 +47,8 @@ export default function CardDestinasi({
             >
               <div>
                 <Image
-                  src={"https://via.placeholder.com/405x426"}
+                  // src={data.wisata.representativeImage ? data.hotel.representativeImage : "https://via.placeholder.com/405x426"}
+                  src={"https://ik.imagekit.io/fathpurn/1705384239188_owAHFNU3o.jpg"}
                   alt={`wisata ${data.nama}`}
                   width={280}
                   height={280}
