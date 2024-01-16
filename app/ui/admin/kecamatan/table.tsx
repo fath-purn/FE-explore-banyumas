@@ -8,7 +8,7 @@ import { useEffect, Key, useState } from "react";
 
 async function getData({ currentPage, limit, search }: PageLimitSearch) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/kecamatan?page=${currentPage}&limit=${limit}&search=${search}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/kecamatan`,
     { cache: "no-store" }
   );
 
@@ -35,7 +35,7 @@ export default async function TableKecamatan({
   useEffect(() => {
     async function fetchData() {
       const data = await getData({ currentPage, limit, search });
-      setDataKecamatan(data.kecamatan);
+      setDataKecamatan(data);
     }
 
     fetchData();
