@@ -63,7 +63,7 @@ export default function Page({
           />
         </div>
         <h1 className="text-black text-[40px] font-semibold text-center mt-10">
-          Lokawisata {dataWisataById?.nama}
+          {dataWisataById?.nama}
         </h1>
 
         {/* Images */}
@@ -101,7 +101,7 @@ export default function Page({
         <div className="flex flex-col md:flex-row w-[90%] md:w-[90%] mt-8 gap-5">
           <div className="flex flex-col w-full md:w-[55%]">
             <h2 className="text-black text-3xl font-semibold">
-              Tentang Lokawisata {dataWisataById?.nama}
+              Tentang {dataWisataById?.nama}
             </h2>
             <p className="text-gray-500 mt-3 text-[20px] font-normal">
               {dataWisataById?.deskripsi}
