@@ -70,7 +70,7 @@ export default function LoginForm() {
   return (
     <form action={action} className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
-        <h1 className={`${lusitana.className} mb-3 text-2xl`}>Tambah Wisata</h1>
+        <h1 className={`${lusitana.className} mb-3 text-2xl`}>Tambah Hotel</h1>
         <div className="w-full">
         <div>
             <label
@@ -189,7 +189,7 @@ export default function LoginForm() {
               className="mb-3 mt-5 block text-xs font-medium text-gray-900"
               htmlFor="nama"
             >
-              Nama Wisata
+              Nama Hotel
             </label>
             <div className="relative">
               <input
@@ -197,7 +197,7 @@ export default function LoginForm() {
                 id="nama"
                 type="text"
                 name="nama"
-                placeholder="Masukkan nama wisata"
+                placeholder="Masukkan nama hotel"
                 required
               />
               <Icon
@@ -221,7 +221,7 @@ export default function LoginForm() {
                 id="deskripsi"
                 type="text"
                 name="deskripsi"
-                placeholder="Masukkan deskripsi wisata"
+                placeholder="Masukkan deskripsi hotel"
                 required
               />
               <Icon
@@ -245,7 +245,7 @@ export default function LoginForm() {
                 id="alamat"
                 type="text"
                 name="alamat"
-                placeholder="Masukkan alamat wisata"
+                placeholder="Masukkan alamat hotel"
                 required
               />
               <Icon
