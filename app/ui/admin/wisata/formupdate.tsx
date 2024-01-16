@@ -65,22 +65,22 @@ export default function FormUpdate({ id }: { id: string }) {
 
     const data = await res.json();
 
-    setNama(data.data.nama);
-    setDeskripsi(data.data.deskripsi);
-    setAlamat(data.data.alamat);
+    setNama(data.data.wisataObject.nama);
+    setDeskripsi(data.data.wisataObject.deskripsi);
+    setAlamat(data.data.wisataObject.alamat);
     // setMaps(data.data.maps);
-    setPrice(data.data.price);
-    setIdKecamatan(data.data.idKecamatan);
-    setLinkImage1(data.data.gambar[0]);
-    setLinkImage2(data.data.gambar[1]);
-    setLinkImage3(data.data.gambar[2]);
-    setJarak(data.data.keterangan.jarak);
-    setBuka(data.data.keterangan.buka.replace(".", ":"));
-    setTutup(data.data.keterangan.tutup.replace(".", ":"));
-    setAkomodasi(data.data.keterangan.akomodasi);
-    setKolam(data.data.keterangan.kolam);
-    setParkir(data.data.keterangan.parkir);
-    setTiket(data.data.keterangan.tiket);
+    setPrice(data.data.wisataObject.price);
+    setIdKecamatan(data.data.wisataObject.idKecamatan);
+    setLinkImage1(data.data.wisataObject.gambar[0]);
+    setLinkImage2(data.data.wisataObject.gambar[1]);
+    setLinkImage3(data.data.wisataObject.gambar[2]);
+    setJarak(data.data.wisataObject.keterangan.jarak);
+    setBuka(data.data.wisataObject.keterangan.buka.replace(".", ":"));
+    setTutup(data.data.wisataObject.keterangan.tutup.replace(".", ":"));
+    setAkomodasi(data.data.wisataObject.keterangan.akomodasi);
+    setKolam(data.data.wisataObject.keterangan.kolam);
+    setParkir(data.data.wisataObject.keterangan.parkir);
+    setTiket(data.data.wisataObject.keterangan.tiket);
   };
 
   useEffect(() => {

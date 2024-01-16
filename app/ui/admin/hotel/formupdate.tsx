@@ -66,25 +66,26 @@ export default function FormUpdate({ id }: { id: string }) {
     }
 
     const data = await res.json();
+    console.log(data.data.hotelObject, 'asdf')
 
-    setNama(data.data.nama);
-    setDeskripsi(data.data.deskripsi);
-    setAlamat(data.data.alamat);
+    setNama(data.data.hotelObject.nama);
+    setDeskripsi(data.data.hotelObject.deskripsi);
+    setAlamat(data.data.hotelObject.alamat);
     // setMaps(data.data.maps);
-    setPrice(data.data.price);
-    setIdKecamatan(data.data.idKecamatan);
-    setLinkImage1(data.data.gambar[0]);
-    setLinkImage2(data.data.gambar[1]);
-    setLinkImage3(data.data.gambar[2]);
-    setWifi(data.data.fasilitas.wifi);
-    setBar(data.data.fasilitas.bar);
-    setRoomService(data.data.fasilitas.roomService);
-    setBreakfast(data.data.fasilitas.breakfast);
-    setRestaurant(data.data.fasilitas.restaurant);
-    setPool(data.data.fasilitas.pool);
-    setParkir(data.data.fasilitas.parkir);
-    setBathrom(data.data.fasilitas.bathrom);
-    setBedroom(data.data.fasilitas.bedroom);
+    setPrice(data.data.hotelObject.price);
+    setIdKecamatan(data.data.hotelObject.idKecamatan);
+    setLinkImage1(data.data.hotelObject.gambar[0]);
+    setLinkImage2(data.data.hotelObject.gambar[1]);
+    setLinkImage3(data.data.hotelObject.gambar[2]);
+    setWifi(data.data.hotelObject.fasilitas.wifi);
+    setBar(data.data.hotelObject.fasilitas.bar);
+    setRoomService(data.data.hotelObject.fasilitas.roomService);
+    setBreakfast(data.data.hotelObject.fasilitas.breakfast);
+    setRestaurant(data.data.hotelObject.fasilitas.restaurant);
+    setPool(data.data.hotelObject.fasilitas.pool);
+    setParkir(data.data.hotelObject.fasilitas.parkir);
+    setBathrom(data.data.hotelObject.fasilitas.bathrom);
+    setBedroom(data.data.hotelObject.fasilitas.bedroom);
   };
 
   useEffect(() => {
@@ -95,7 +96,7 @@ export default function FormUpdate({ id }: { id: string }) {
   return (
     <form action={action} className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
-        <h1 className={`${lusitana.className} mb-3 text-2xl`}>Edit Wisata</h1>
+        <h1 className={`${lusitana.className} mb-3 text-2xl`}>Edit Hotel</h1>
         <div className="w-full">
           <div>
             <label
@@ -265,7 +266,7 @@ export default function FormUpdate({ id }: { id: string }) {
               className="mb-3 mt-5 block text-xs font-medium text-gray-900"
               htmlFor="nama"
             >
-              Nama Wisata
+              Nama Hotel
             </label>
             <div className="relative">
               <input
@@ -273,7 +274,7 @@ export default function FormUpdate({ id }: { id: string }) {
                 id="nama"
                 type="text"
                 name="nama"
-                placeholder="Masukkan nama wisata"
+                placeholder="Masukkan nama hotel"
                 required
                 onChange={(e) => {
                   setNama(e.target.value);
@@ -301,7 +302,7 @@ export default function FormUpdate({ id }: { id: string }) {
                 id="deskripsi"
                 type="text"
                 name="deskripsi"
-                placeholder="Masukkan deskripsi wisata"
+                placeholder="Masukkan deskripsi hotel"
                 required
                 onChange={(e) => {
                   setDeskripsi(e.target.value);
@@ -329,7 +330,7 @@ export default function FormUpdate({ id }: { id: string }) {
                 id="alamat"
                 type="text"
                 name="alamat"
-                placeholder="Masukkan alamat wisata"
+                placeholder="Masukkan alamat hotel"
                 required
                 onChange={(e) => {
                   setAlamat(e.target.value);
