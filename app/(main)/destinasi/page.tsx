@@ -16,7 +16,7 @@ export default function Hotel({
     search?: string;
   };
 }) {
-  const limit = Number(searchParams?.limit) || 5;
+  const limit = Number(searchParams?.limit) || 10;
   const currentPage = Number(searchParams?.page) || 1;
   const search = searchParams?.search || "";
 

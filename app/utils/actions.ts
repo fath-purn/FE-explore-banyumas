@@ -1,6 +1,6 @@
 "use client";
 
-import { signIn } from "@/app/utils/auth";
+import { signIn, signUp } from "@/app/utils/auth";
 import {
   POSTWISATA,
   UPDATEWISATA,
@@ -19,6 +19,27 @@ export async function authenticate(
 ) {
   try {
     const code = await signIn("credentials", Object.fromEntries(formData));
+
+    if (code && code.success === true) {
+      window.location.href = "/dashboard";
+      return code;
+    }
+
+    if (code && code.success === false) {
+      return code;
+    }
+  } catch (error) {
+    console.error("Error during authentication:", error);
+    return { success: false, message: "Authentication failed" };
+  }
+}
+
+export async function register(
+  prevState: string | undefined,
+  formData: FormData
+) {
+  try {
+    const code = await signUp("credentials", Object.fromEntries(formData));
 
     if (code && code.success === true) {
       window.location.href = "/dashboard";

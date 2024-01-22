@@ -1,24 +1,25 @@
-'use client';
- 
-import { lusitana } from '@/app/ui/fonts';
+"use client";
+
+import { lusitana } from "@/app/ui/fonts";
 import {
   AtSymbolIcon,
   KeyIcon,
   ExclamationCircleIcon,
-} from '@heroicons/react/24/outline';
-import { ArrowRightIcon } from '@heroicons/react/20/solid';
-import { Button } from './button';
-import { useFormState, useFormStatus } from 'react-dom';
-import { authenticate } from '@/app/utils/actions';
- 
-export default function LoginForm() {
-  const [code, action] = useFormState(authenticate, undefined);
+} from "@heroicons/react/24/outline";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
+import { Button } from "./button";
+import { useFormState, useFormStatus } from "react-dom";
+import { register, authenticate } from "@/app/utils/actions";
+
+export default function LoginForm({ thisIsLogin }: { thisIsLogin?: boolean }) {
+
+  const [code, action] = useFormState(thisIsLogin ? authenticate : register, undefined);
 
   return (
     <form action={action} className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
         <h1 className={`${lusitana.className} mb-3 text-2xl`}>
-          Please log in to continue.
+          {thisIsLogin ? "Please log in to continue." : "Please Register to continue."}
         </h1>
         <div className="w-full">
           <div>
@@ -61,7 +62,7 @@ export default function LoginForm() {
             </div>
           </div>
         </div>
-        <LoginButton />
+        <LoginButton thisIsLogin={thisIsLogin} />
         <div className="flex h-8 items-end space-x-1">
           {code !== undefined && (
             <>
@@ -76,13 +77,13 @@ export default function LoginForm() {
     </form>
   );
 }
- 
-function LoginButton() {
+
+function LoginButton({ thisIsLogin }: { thisIsLogin?: boolean }) {
   const { pending } = useFormStatus();
- 
+
   return (
     <Button className="mt-4 w-full" aria-disabled={pending}>
-      Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+      {thisIsLogin ? "Log In" : "Sign Up"} <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
     </Button>
   );
 }

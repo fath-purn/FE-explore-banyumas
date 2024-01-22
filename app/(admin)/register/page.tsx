@@ -3,7 +3,7 @@ import LoginForm from '@/app/ui/admin/login-form';
 import { Metadata } from 'next';
  
 export const metadata: Metadata = {
-  title: 'Login',
+  title: 'Register',
 };
 
 export default function LoginPage() {
@@ -15,7 +15,7 @@ export default function LoginPage() {
             <LogoFull />
           </div>
         </div>
-        <LoginForm thisIsLogin={true} />
+        <LoginForm />
       </div>
     </main>
   );
