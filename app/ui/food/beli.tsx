@@ -4230,6 +4230,7 @@ export default function CardBeli({
   const [totalPesanan, setTotalPesanan] = useState<string>("");
   const [hargaMakanan, setHargaMakanan] = useState<number>(0);
   const [tempat, setTempat] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   var linkWhatsApp = "";
 
@@ -4254,6 +4255,7 @@ export default function CardBeli({
 
   const handleCheckOngkir = async () => {
     try {
+        setIsLoading(true); // Mengaktifkan loading
       const data = await getOngkir({
         origin: "1",
         destination: selectedCityId,
@@ -4267,6 +4269,7 @@ export default function CardBeli({
       linkWhatsApp = `https://api.whatsapp.com/send?phone=6285155040590&text=Hai%20kak%2C%20saya%20pesen%20${nama}%20totalnya%20${totalPesanan}%20total%20harganya%3A%20${hargaMakanan}%2C%20dikirim%20ke%20${tempat}%20dengan%20ongkir%20${hargaOngkir}%2C%20Total%20Pesanan%20anda%20adalah%20${
         hargaOngkir + hargaMakanan
       }`;
+      setIsLoading(false);
     } catch (error) {
       console.log("Error fetching ongkir data", error);
     }
@@ -4379,9 +4382,10 @@ export default function CardBeli({
       </div>
       <button
         onClick={handleCheckOngkir}
-        className="mt-3 bg-blue-gray-100 rounded py-2 px-5 text-[16px]"
+        className="mt-3 py-2 px-4 bg-blue-500 text-white rounded-md"
+        disabled={isLoading} // Menonaktifkan tombol saat loading
       >
-        Cek Ongkir
+        {isLoading ? "Loading..." : "Cek Ongkir"}
       </button>
       <h1 className="font-medium leading-wide text-normal mt-3">
         Total Ongkos Kirim:{" "}
