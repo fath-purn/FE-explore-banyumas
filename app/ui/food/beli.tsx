@@ -4243,14 +4243,14 @@ export default function CardBeli({
     } else {
       setFilteredCities([]);
     }
-
+  }, [selectedProvinceId]);
+  
+  useEffect(() => {
     if (selectedCityId) {
       const filtered = city.find((city) => city.city_id === selectedCityId);
       setTempat(filtered?.city_name ? filtered?.city_name : "");
-    } else {
-      setFilteredCities([]);
     }
-  }, [selectedProvinceId, selectedCityId]);
+  }, [selectedCityId]);
 
   const handleCheckOngkir = async () => {
     try {
