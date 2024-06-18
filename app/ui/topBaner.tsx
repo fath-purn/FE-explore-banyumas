@@ -17,7 +17,7 @@ const beranda: Baner[] = [
     alt: "Beranda",
     src: "https://ik.imagekit.io/fathpurn/beranda?updatedAt=1699529566298",
     title: "Explore Banyumas",
-    description: "Temukan hotel dan wisata menarik di Banyumas!",
+    description: "Temukan Hotel, Wisata dan Kuliner menarik di Banyumas!",
     className: "max-h-[401px]"
   },
 ];
@@ -42,9 +42,9 @@ const hotel: Baner[] = [
 
 const makanan: Baner[] = [
   {
-    alt: "Hotel",
+    alt: "Makanan",
     src: "https://ik.imagekit.io/fathpurn/hotel.png?updatedAt=1699774721377",
-    title: "Makanan Khas di Banyumas",
+    title: "Kuliner Khas di Banyumas",
     className: "max-h-[614px]"
   },
 ];

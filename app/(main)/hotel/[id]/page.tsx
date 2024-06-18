@@ -126,7 +126,7 @@ export default function Page({
             </div>
             <div className="mt-10 w-fit">
               <Link
-                href={`https://api.whatsapp.com/send?phone=6285155040590&text=Hai%20kak%2C%20aku%20mau%20reservasi%20apakah%20ada%20kamar%20kosong%3F`}
+                href={`https://api.whatsapp.com/send?phone=6285155040590&text=Halo!%20Saya%20tertarik%20untuk%20memesan%20kamar%20di%20hotel%20Anda.%20Apakh%20ada%20kamar%20yang%20tersedia%3F`}
                 className="bg-green-500 flex flex-row rounded py-3 px-6 items-center"
                 target={"_blank"}
               >

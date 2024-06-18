@@ -4,8 +4,8 @@ import Search from "@/app/ui/search";
 import Link from "next/link";
 import Footer from "@/app/ui/footer";
 import CardUlasan from "@/app/ui/cardUlasan";
-import AddUlasan from "@/app/ui/ulasan/addUlasan";
 import CardFood from "@/app/ui/food/cardFood";
+import AddUlasanMakanan from "@/app/ui/ulasan/addUlasanMakanan";
 
 export const metadata: Metadata = {
   title: "Makanan",
@@ -39,7 +39,7 @@ export default function Makanan({
       <div className="w-full mt-10">
         <div className="flex justify-between items-center m-auto w-[95%] md:w-[85%]">
           <h3 className="text-black text-[1.18rem] md:text-2xl font-semibold">
-            Makanan Khas Banyumas
+            Kuliner Khas Banyumas
           </h3>
           <Link
             href="/food/all"
@@ -55,7 +55,7 @@ export default function Makanan({
       <div className="w-full mt-10">
         <div className="flex justify-between items-center m-auto w-[95%] md:w-[85%]">
           <h3 className="text-black text-[1.18rem] md:text-2xl font-semibold">
-            Makanan Populer di Banyumas
+            Kuliner Populer di Banyumas
           </h3>
           <Link
             href="/food/all"
@@ -70,7 +70,7 @@ export default function Makanan({
       {/* Ulasan */}
       <div className="w-full mt-10">
         <hr className="bg-black" />
-        <AddUlasan hotel={true} />
+        <AddUlasanMakanan />
         <div className="">
           <CardUlasan />
         </div>

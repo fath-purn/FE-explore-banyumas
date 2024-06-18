@@ -55,7 +55,8 @@ export default function Page({
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-row gap-1 w-[90%] md:w-[90%] mt-10">
           <LinkHistory
-            link="hotel"
+            link="food"
+            makanan={true}
             nama={dataMakananById?.nama ? dataMakananById?.nama : "Hotel"}
           />
         </div>

@@ -1,9 +1,9 @@
 import Icon from "@mdi/react";
-import { mdiMailboxOutline, mdiInstagram, mdiPhone } from "@mdi/js";
+import { mdiInstagram, mdiPhone, mdiMail } from "@mdi/js";
 
 const kontak = [
   {
-    icon: mdiMailboxOutline,
+    icon: mdiMail,
     text: "ExploreBanyumasJateng@gmail.com",
   },
   {
@@ -12,7 +12,7 @@ const kontak = [
   },
   {
     icon: mdiPhone,
-    text: "+62 8235723190",
+    text: "+62 85155040590",
   },
 ];
 

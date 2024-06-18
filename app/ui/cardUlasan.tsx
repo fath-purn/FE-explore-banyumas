@@ -30,10 +30,9 @@ export const responsive = {
 };
 
 const getData = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/ulasan`,
-    { cache: "no-store" }
-  );
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/ulasan`, {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -44,7 +43,7 @@ const getData = async () => {
 };
 
 export default function CardUlasan() {
-  const [dataUlasan, setDataUlasan] = useState<Ulasan[]>([])
+  const [dataUlasan, setDataUlasan] = useState<Ulasan[]>([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -56,17 +55,23 @@ export default function CardUlasan() {
     fetchData();
   }, []);
 
-  const product = dataUlasan.map(
-    (item: Ulasan) => (
-      <UlasanCard
-        key={item.id}
-        id={item.id}
-        name={item.nama}
-        title={item.Hotel ? item.Hotel : (item.wisata ? item.wisata : '-')}
-        comment={item.ulasan}
-      />
-    )
-  );
+  const product = dataUlasan.map((item: Ulasan) => (
+    <UlasanCard
+      key={item.id}
+      id={item.id}
+      name={item.nama}
+      title={
+        item.Hotel
+          ? item.Hotel
+          : item.wisata
+          ? item.wisata
+          : item.MakananKhas
+          ? item.MakananKhas
+          : "-"
+      }
+      comment={item.ulasan}
+    />
+  ));
 
   return (
     <div className="gap-3">
@@ -106,14 +111,14 @@ export function UlasanCard(props: {
           color={"#FE6984"}
         />
         <h2
-      className={clsx("ml-3", "text-neutral-700", {
-        "text-[25px]": !isTextLong, // Gunakan ukuran normal jika teks tidak panjang
-        "text-sm": isTextLong, // Gunakan ukuran yang lebih kecil jika teks panjang
-        "font-medium": true, // Atau gunakan properti font sesuai kebutuhan Anda
-      })}
-    >
-      {props.name}
-    </h2>
+          className={clsx("ml-3", "text-neutral-700", {
+            "text-[25px]": !isTextLong, // Gunakan ukuran normal jika teks tidak panjang
+            "text-sm": isTextLong, // Gunakan ukuran yang lebih kecil jika teks panjang
+            "font-medium": true, // Atau gunakan properti font sesuai kebutuhan Anda
+          })}
+        >
+          {props.name}
+        </h2>
       </div>
       <h2 className="text-neutral-700 text-xl font-medium mt-3">
         {props.title}

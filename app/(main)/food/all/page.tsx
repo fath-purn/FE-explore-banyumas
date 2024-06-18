@@ -5,6 +5,7 @@ import CardUlasan from "@/app/ui/cardUlasan";
 import AddUlasan from "@/app/ui/ulasan/addUlasan";
 import LinkHistory from "@/app/ui/linkHistory";
 import CardFood from "@/app/ui/food/cardFood";
+import AddUlasanMakanan from "@/app/ui/ulasan/addUlasanMakanan";
 
 export const metadata: Metadata = {
   title: "Hotel",
@@ -38,7 +39,7 @@ export default function Hotel({
       {/* Ulasan */}
       <div className="w-full mt-10">
         <hr className="bg-black" />
-        <AddUlasan wisata={true} />
+        <AddUlasanMakanan />
         <div className="">
           <CardUlasan />
         </div>

@@ -5,10 +5,12 @@ export default function LinkHistory({
   destinasi,
   hotel,
   nama,
+  makanan,
 }: {
   link: string;
   destinasi?: boolean;
   hotel?: boolean;
+  makanan?: boolean;
   nama: string;
 }) {
   const capitalizedLink = link.charAt(0).toUpperCase() + link.slice(1);
@@ -32,10 +34,10 @@ export default function LinkHistory({
           </Link>
           <p className="text-gray-500 text-sm md:text-base font-semibold">/</p>
           <Link
-            href={hotel ? `/hotel` : `/wisata`}
+            href={hotel ? `/hotel` : makanan ? `/makanan` : `/wisata`}
             className="text-gray-500 text-sm md:text-base font-semibold"
           >
-            {hotel ? "Hotel" : "Wisata"}
+            {hotel ? `Hotel` : makanan ? `Makanan` : `Wisata`}
           </Link>
           <p className="text-gray-500 text-sm md:text-base font-semibold">/</p>
           <p className="text-black-500 text-sm md:text-base font-semibold">

@@ -47,17 +47,21 @@ export default function Page({
           </h2>
           <p className="text-center text-stone-700 text-base font-normal w-[90%] md:w-[65%]">
             Kabupaten Banyumas, yang terletak di Provinsi Jawa Tengah,
-            Indonesia, adalah kabupaten dengan destinasi wisata yang menawarkan
-            kekayaan budaya, keindahan alam, dan warisan sejarah yang
-            menakjubkan. Beragam wisata di Banyumas menjadikan kota ini maju
-            dibidang perhotelan
+            Indonesiam adalah destinasi wisata yang memukau dengan keindahan
+            alam, warisan sejarah, dan kekayaan budaya yang memikat. Nikamti
+            kelezatan kuliner khas seperti mendoan yang gurih dan soto Sokaraja
+            dengan kuah kacangnya yang unik. Temukan pesona air terjun,
+            perbukitan hijau, serta kekayaan sejarah yang ada di setiap
+            sudutnya. Jelajahi Banyumas dan rasakan pengalaman tak terlupakan di
+            destinasi wisata yang semakin berkembang dengan berbagai pilihan
+            akomodasi yang nyaman dan menarik.
           </p>
-          <Link
+          {/* <Link
             href="/destinasi"
             className="text-gray-500 text-base font-medium mt-5 underline"
           >
             Selengkapnya
-          </Link>
+          </Link> */}
           <div className="flex items-center justify-center m-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 m-auto w-[95%] md:w-full gap-4">
               <DataBanyumas />

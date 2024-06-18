@@ -119,6 +119,7 @@ export interface Ulasan {
   updatedAt: string;
   wisata?: string;
   Hotel?: string;
+  MakananKhas?: string;
 }
 
 export interface CardWisatHotelFood {
