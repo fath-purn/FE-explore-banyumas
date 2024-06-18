@@ -4244,7 +4244,7 @@ export default function CardBeli({
       setFilteredCities([]);
     }
   }, [selectedProvinceId]);
-  
+
   useEffect(() => {
     if (selectedCityId) {
       const filtered = city.find((city) => city.city_id === selectedCityId);
@@ -4275,116 +4275,114 @@ export default function CardBeli({
   return (
     <div>
       <h1 className="font-medium leading-wide text-xl">Alamat anda</h1>
-      <form action="">
-        <div>
-          <label
-            className="mb-3 mt-5 block text-xs font-medium text-gray-900"
-            htmlFor="idProvince"
-          >
-            Provinsi
-          </label>
-          <div className="relative">
-            <select
-              className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-3 text-sm outline-2 placeholder:text-gray-500"
-              id="idProvince"
-              name="idProvince"
-              required
-              value={selectedProvinceId}
-              onChange={(e) => setSelectedProvinceId(e.target.value)}
-            >
-              <option value="" disabled>
-                Pilih Provinsi
-              </option>
-              {provinsi.map((province, index) => (
-                <option key={index} value={province.province_id}>
-                  {province.province}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label
-            className="mb-3 mt-5 block text-xs font-medium text-gray-900"
-            htmlFor="idCity"
-          >
-            Kota
-          </label>
-          <div className="relative">
-            <select
-              className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-3 text-sm outline-2 placeholder:text-gray-500"
-              id="idCity"
-              name="idCity"
-              required
-              disabled={!selectedProvinceId}
-              value={selectedCityId}
-              onChange={(e) => setSelectedCityId(e.target.value)}
-            >
-              <option value="" disabled>
-                Pilih Kota
-              </option>
-              {filteredCities.map((city, index) => (
-                <option key={index} value={city.city_id}>
-                  {city.city_name}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-        <div>
-          <label
-            className="mb-3 mt-5 block text-xs font-medium text-gray-900"
-            htmlFor="idCourier"
-          >
-            Jasa Kirim
-          </label>
-          <div className="relative">
-            <select
-              className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-3 text-sm outline-2 placeholder:text-gray-500"
-              id="idCourier"
-              name="idCourier"
-              required
-              value={jasa}
-              onChange={(e) => setJasa(e.target.value)}
-            >
-              <option value="" disabled>
-                Pilih Jasa Kirim
-              </option>
-              {jasaKirim.map((jasa, index) => (
-                <option key={index} value={jasa.id}>
-                  {jasa.nama}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-        <div>
-          <label
-            className="mb-3 mt-5 block text-xs font-medium text-gray-900"
-            htmlFor="idCourier"
-          >
-            Total Pesanan
-          </label>
-          <div className="relative">
-            <input
-              type="number"
-              className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-3 text-sm outline-2 placeholder:text-gray-500"
-              id="idCourier"
-              name="idCourier"
-              required
-              value={totalPesanan}
-              onChange={(e) => setTotalPesanan(e.target.value)}
-            />
-          </div>
-        </div>
-        <button
-          onClick={handleCheckOngkir}
-          className="mt-3 bg-blue-gray-100 rounded py-2 px-5 text-[16px]"
+      <div>
+        <label
+          className="mb-3 mt-5 block text-xs font-medium text-gray-900"
+          htmlFor="idProvince"
         >
-          Cek Ongkir
-        </button>
-      </form>
+          Provinsi
+        </label>
+        <div className="relative">
+          <select
+            className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-3 text-sm outline-2 placeholder:text-gray-500"
+            id="idProvince"
+            name="idProvince"
+            required
+            value={selectedProvinceId}
+            onChange={(e) => setSelectedProvinceId(e.target.value)}
+          >
+            <option value="" disabled>
+              Pilih Provinsi
+            </option>
+            {provinsi.map((province, index) => (
+              <option key={index} value={province.province_id}>
+                {province.province}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label
+          className="mb-3 mt-5 block text-xs font-medium text-gray-900"
+          htmlFor="idCity"
+        >
+          Kota
+        </label>
+        <div className="relative">
+          <select
+            className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-3 text-sm outline-2 placeholder:text-gray-500"
+            id="idCity"
+            name="idCity"
+            required
+            disabled={!selectedProvinceId}
+            value={selectedCityId}
+            onChange={(e) => setSelectedCityId(e.target.value)}
+          >
+            <option value="" disabled>
+              Pilih Kota
+            </option>
+            {filteredCities.map((city, index) => (
+              <option key={index} value={city.city_id}>
+                {city.city_name}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+      <div>
+        <label
+          className="mb-3 mt-5 block text-xs font-medium text-gray-900"
+          htmlFor="idCourier"
+        >
+          Jasa Kirim
+        </label>
+        <div className="relative">
+          <select
+            className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-3 text-sm outline-2 placeholder:text-gray-500"
+            id="idCourier"
+            name="idCourier"
+            required
+            value={jasa}
+            onChange={(e) => setJasa(e.target.value)}
+          >
+            <option value="" disabled>
+              Pilih Jasa Kirim
+            </option>
+            {jasaKirim.map((jasa, index) => (
+              <option key={index} value={jasa.id}>
+                {jasa.nama}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+      <div>
+        <label
+          className="mb-3 mt-5 block text-xs font-medium text-gray-900"
+          htmlFor="idCourier"
+        >
+          Total Pesanan
+        </label>
+        <div className="relative">
+          <input
+            type="number"
+            className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-3 text-sm outline-2 placeholder:text-gray-500"
+            id="idCourier"
+            name="idCourier"
+            required
+            value={totalPesanan}
+            onChange={(e) => setTotalPesanan(e.target.value)}
+          />
+        </div>
+      </div>
+      <button
+        onClick={handleCheckOngkir}
+        className="mt-3 bg-blue-gray-100 rounded py-2 px-5 text-[16px]"
+      >
+        Cek Ongkir
+      </button>
       <h1 className="font-medium leading-wide text-normal mt-3">
         Total Ongkos Kirim:{" "}
         <span className="font-bold">
