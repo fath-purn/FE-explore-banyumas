@@ -4180,24 +4180,21 @@ type Ongkir = {
 
 async function getOngkir({ origin, destination, weight, courier }: Ongkir) {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_RAJAONGKIR}starter/cost`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          key:
-            process.env.NEXT_PUBLIC_RAJAONGKIR_KEY ||
-            "37389add0359d4b73a8c18ced387d76e",
-          origin: origin,
-          destination: destination,
-          weight: weight,
-          courier: courier,
-        }),
-      }
-    );
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/food/ongkir`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        key:
+          process.env.NEXT_PUBLIC_RAJAONGKIR_KEY ||
+          "37389add0359d4b73a8c18ced387d76e",
+        origin: origin,
+        destination: destination,
+        weight: weight,
+        courier: courier,
+      }),
+    });
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -4231,8 +4228,9 @@ export default function CardBeli({
   const [hargaMakanan, setHargaMakanan] = useState<number>(0);
   const [tempat, setTempat] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  var linkWhatsApp = "";
+  const [alamatLengkap, setAlamatLengkap] = useState<string>("");
+  const [totalHargaPesananLengkap, setTotalHargaPesananLengkap] =
+    useState<number>(0);
 
   useEffect(() => {
     // Filter kota berdasarkan province_id yang dipilih
@@ -4255,24 +4253,28 @@ export default function CardBeli({
 
   const handleCheckOngkir = async () => {
     try {
-        setIsLoading(true); // Mengaktifkan loading
+      setIsLoading(true); // Mengaktifkan loading
       const data = await getOngkir({
-        origin: "1",
+        origin: "41",
         destination: selectedCityId,
         weight: 10,
         courier: jasa,
       });
       setHargaOngkir(data);
-
-      setHargaMakanan(Number(totalPesanan) * harga);
-
-      linkWhatsApp = `https://api.whatsapp.com/send?phone=6285155040590&text=Hai%20kak%2C%20saya%20pesen%20${nama}%20totalnya%20${totalPesanan}%20total%20harganya%3A%20${hargaMakanan}%2C%20dikirim%20ke%20${tempat}%20dengan%20ongkir%20${hargaOngkir}%2C%20Total%20Pesanan%20anda%20adalah%20${
-        hargaOngkir + hargaMakanan
-      }`;
+      
+      var total = hargaMakanan + data;
+      setTotalHargaPesananLengkap(total);
       setIsLoading(false);
     } catch (error) {
       console.log("Error fetching ongkir data", error);
     }
+  };
+
+  const handleTotalPesananChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Proses nilai input jika diperlukan, misalnya memverifikasi atau memformat nilai
+    setTotalPesanan(value);
+    setHargaMakanan(Number(value) * harga);
   };
 
   return (
@@ -4366,6 +4368,25 @@ export default function CardBeli({
           className="mb-3 mt-5 block text-xs font-medium text-gray-900"
           htmlFor="idCourier"
         >
+          Alamat Lengkap
+        </label>
+        <div className="relative">
+          <input
+            type="text"
+            className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-3 text-sm outline-2 placeholder:text-gray-500"
+            id="idCourier"
+            name="idCourier"
+            required
+            value={alamatLengkap}
+            onChange={(e) => setAlamatLengkap(e.target.value)}
+          />
+        </div>
+      </div>
+      <div>
+        <label
+          className="mb-3 mt-5 block text-xs font-medium text-gray-900"
+          htmlFor="idCourier"
+        >
           Total Pesanan
         </label>
         <div className="relative">
@@ -4376,7 +4397,7 @@ export default function CardBeli({
             name="idCourier"
             required
             value={totalPesanan}
-            onChange={(e) => setTotalPesanan(e.target.value)}
+            onChange={handleTotalPesananChange}
           />
         </div>
       </div>
@@ -4388,15 +4409,33 @@ export default function CardBeli({
         {isLoading ? "Loading..." : "Cek Ongkir"}
       </button>
       <h1 className="font-medium leading-wide text-normal mt-3">
-        Total Ongkos Kirim:{" "}
+        Ongkos Kirim:{" "}
         <span className="font-bold">
           RP {hargaOngkir ? hargaOngkir.toLocaleString("id-ID") : 0},-
         </span>
       </h1>
+      <h1 className="font-medium leading-wide text-normal mt-3">
+        {nama}: RP {harga ? harga.toLocaleString("id-ID") : 0} x{" "}
+        {totalPesanan ? totalPesanan : 0} :{" "}
+        <span className="font-bold">
+          RP {hargaMakanan ? hargaMakanan.toLocaleString("id-ID") : 0},-
+        </span>
+      </h1>
+      <h1 className="font-medium leading-wide text-normal mt-3">
+        Total Pesanan Anda:{" "}
+        <span className="font-bold">
+          RP{" "}
+          {totalHargaPesananLengkap
+            ? totalHargaPesananLengkap.toLocaleString("id-ID")
+            : 0}
+          ,-
+        </span>
+      </h1>
       <div className="mt-5">
         <Link
-          href={linkWhatsApp}
-          className="bg-green-500 flex flex-row rounded py-4 px-7 items-center"
+          href={`https://api.whatsapp.com/send?phone=6285155040590&text=Hai%20kak%2C%20saya%20pesen%20${nama}%20totalnya%20${totalPesanan}%20total%20harganya%3A%20${hargaMakanan}%2C%20dikirim%20ke%20${alamatLengkap}%20dengan%20ongkir%20${hargaOngkir}%2C%20Total%20Pesanan%20anda%20adalah%20${totalHargaPesananLengkap}`}
+          className="bg-green-500 flex flex-row rounded py-3 px-6 items-center"
+          target={"_blank"}
         >
           <Icon
             path={mdiWhatsapp}

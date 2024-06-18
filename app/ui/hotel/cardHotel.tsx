@@ -88,7 +88,7 @@ export default function CardHotel({
               />
               <div className="flex items-center justify-center my-3 ml-1 md:ml-0 w-[50%] md:w-full">
                 <div className="w-[90%]">
-                  <h3 className="text-black text-xl font-medium mb-3">
+                  <h3 className="text-black text-xl font-medium mb-3 line-clamp-1">
                     {hotel.nama}
                   </h3>
                   <Icon

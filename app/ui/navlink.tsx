@@ -40,18 +40,18 @@ const links = [
     icon: mdiFood,
     iconOutline: mdiFoodOutline,
   },
-  {
-    name: "Destinasi",
-    href: "/destinasi",
-    icon: mdiTrendingUp,
-    iconOutline: mdiTrendingUp,
-  },
-  {
-    name: "Tentang kami",
-    href: "/about",
-    icon: mdiAccountGroup,
-    iconOutline: mdiAccountGroupOutline,
-  },
+  // {
+  //   name: "Destinasi",
+  //   href: "/destinasi",
+  //   icon: mdiTrendingUp,
+  //   iconOutline: mdiTrendingUp,
+  // },
+  // {
+  //   name: "Tentang kami",
+  //   href: "/about",
+  //   icon: mdiAccountGroup,
+  //   iconOutline: mdiAccountGroupOutline,
+  // },
 ];
 
 export default function Navlink() {

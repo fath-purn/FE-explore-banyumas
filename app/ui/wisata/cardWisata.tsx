@@ -85,7 +85,7 @@ export default async function TableWisata({
               />
               <div className="flex items-center justify-center my-3 ml-1 md:ml-0 w-[50%] md:w-full">
                 <div className="w-[90%]">
-                  <h3 className="text-black text-xl font-medium mb-3">
+                  <h3 className="text-black text-xl font-medium mb-3 line-clamp-1">
                     {wisata.nama}
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 items-center justify-between mt-3 w-full">

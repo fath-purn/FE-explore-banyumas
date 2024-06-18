@@ -10,6 +10,7 @@ import CardWisata from "@/app/ui/wisata/cardWisata";
 import { useState, useEffect } from "react";
 import { Makanan, City } from "@/app/utils/definitions";
 import CardBeli from "@/app/ui/food/beli";
+import CardFood from "@/app/ui/food/cardFood";
 
 async function getDataById({ params }: { params: string }) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/food/${params}`, {
@@ -114,7 +115,7 @@ export default function Page({
           <h2 className="text-black text-[25px] font-semibold mb-5">
             Wisata terdekat lainnya
           </h2>
-          <CardWisata limit={limit} currentPage={currentPage} search={search} />
+          <CardFood limit={limit} currentPage={currentPage} search={search} />
         </div>
       </div>
       <Footer />

@@ -4,7 +4,7 @@ import LinkHistory from "@/app/ui/linkHistory";
 import Image from "next/image";
 import Link from "next/link";
 import Keterangan from "@/app/ui/wisata/keterangan";
-import { mdiMapMarker } from "@mdi/js";
+import { mdiMapMarker, mdiWhatsapp } from "@mdi/js";
 import Icon from "@mdi/react";
 import CardHotel from "@/app/ui/hotel/cardHotel";
 import Footer from "@/app/ui/footer";
@@ -113,6 +113,21 @@ export default function Page({
                   keterangan={dataWisataById?.keterangan}
                 />
               )}
+            </div>
+            <div className="mt-10 w-fit">
+              <Link
+                href={`https://api.whatsapp.com/send?phone=6285155040590&text=Hai%20kak%2C%20aku%20mau%20pesan%20tiket%2C%20apakah%20ada%20kamar%20kosong%3F`}
+                className="bg-green-500 flex flex-row rounded py-3 px-6 items-center"
+                target={"_blank"}
+              >
+                <Icon
+                  path={mdiWhatsapp}
+                  size={1.2}
+                  className="w-6 mr-2"
+                  color={"white"}
+                />
+                <p className="text-white">Pesan Sekarang</p>
+              </Link>
             </div>
           </div>
           <div className="flex flex-col w-full lg:ml-5 md:w-[50%] lg:w-[45%] shadow-md rounded-lg">

@@ -4,6 +4,7 @@ import Footer from "@/app/ui/footer";
 import CardUlasan from "@/app/ui/cardUlasan";
 import AddUlasan from "@/app/ui/ulasan/addUlasan";
 import LinkHistory from "@/app/ui/linkHistory";
+import CardFood from "@/app/ui/food/cardFood";
 
 export const metadata: Metadata = {
   title: "Hotel",
@@ -32,7 +33,7 @@ export default function Hotel({
 
       {/* Hotel Terbaik */}
       <div className="w-full mt-10">
-        <CardHotel limit={limit} currentPage={currentPage} search={search} pagination={true}/>
+        <CardFood limit={limit} currentPage={currentPage} search={search} pagination={true}/>
       </div>
       {/* Ulasan */}
       <div className="w-full mt-10">
