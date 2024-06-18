@@ -11,12 +11,14 @@ import {
   mdiTrendingUp,
   mdiAccountGroup,
   mdiAccountGroupOutline,
+  mdiFood,
+  mdiFoodOutline,
 } from "@mdi/js";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { Logo } from "@/app/ui/svg-image";
-import { useMediaQuery } from "@mui/material";
+// import { useMediaQuery } from "@mui/material";
 
 const links = [
   { name: "Beranda", href: "/", icon: mdiHome, iconOutline: mdiHomeOutline },
@@ -31,6 +33,12 @@ const links = [
     href: "/hotel",
     icon: mdiCityVariant,
     iconOutline: mdiCityVariantOutline,
+  },
+  {
+    name: "Makanan",
+    href: "/food",
+    icon: mdiFood,
+    iconOutline: mdiFoodOutline,
   },
   {
     name: "Destinasi",

@@ -7,7 +7,7 @@ import Start from "../star";
 import Fasilitas from "./fasilitas";
 import { CardButton } from "@/app/ui/button";
 import { useState, useEffect } from "react";
-import { PageLimitSearch, CardWisataAndHotel } from "@/app/utils/definitions";
+import { PageLimitSearch, CardWisatHotelFood } from "@/app/utils/definitions";
 import Pagination from "@/app/ui/destinasi/pagination";
 
 async function getData({
@@ -51,7 +51,7 @@ export default function CardHotel({
   destinasi,
   id,
   pagination,
-}: CardWisataAndHotel) {
+}: CardWisatHotelFood) {
   const [dataHotel, setDataHotel] = useState<any[]>([]);
   const [totalPages, setTotalPages] = useState<number>(0);
 

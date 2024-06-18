@@ -52,6 +52,27 @@ export type Hotel = {
   };
 };
 
+export type Makanan = {
+  id: number;
+  nama: string;
+  deskripsi: string;
+  harga: number;
+  idKecamatan: number;
+  created: string;
+  updated: string;
+  gambar: string[],
+  kecamatan: string;
+}
+
+export type City = {
+  city_id: string;
+    province_id: string;
+    province: string;
+    type: string;
+    city_name: string;
+    postal_code: string;
+}
+
 export type Kecamatan = {
   id: number;
   nama: string;
@@ -79,6 +100,7 @@ export interface CountData {
   wisata: number;
   kecamatan: number;
   ulasan: number;
+  makanan: number;
 }
 
 export interface DataWisataKecamatan {
@@ -99,7 +121,7 @@ export interface Ulasan {
   Hotel?: string;
 }
 
-export interface CardWisataAndHotel {
+export interface CardWisatHotelFood {
   limit: number;
   currentPage: number;
   search: string;

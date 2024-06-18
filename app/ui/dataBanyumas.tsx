@@ -6,6 +6,7 @@
     mdiImageFilterHdr,
     mdiMapMarkerRadiusOutline,
     mdiBagSuitcaseOutline,
+    mdiFood,
   } from "@mdi/js";
   import { useState, useEffect } from "react";
   import { CountData } from "@/app/utils/definitions";
@@ -32,12 +33,12 @@
         jumlah: dataCount?.kecamatan ? dataCount?.kecamatan : 0,
         icon: mdiMapMarkerRadiusOutline,
       },
-      // {
-      //   id: 4,
-      //   title: "Turis",
-      //   jumlah: 4310,
-      //   icon: mdiBagSuitcaseOutline,
-      // },
+      {
+        id: 4,
+        title: "Makanan",
+        jumlah: dataCount?.makanan ? dataCount?.makanan : 0,
+        icon: mdiFood,
+      },
     ];
 
     useEffect(() => {

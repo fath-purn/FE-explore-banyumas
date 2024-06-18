@@ -8,6 +8,7 @@ import CardWisata from "@/app/ui/wisata/cardWisata";
 import Footer from "@/app/ui/footer";
 import { Suspense } from "react";
 import { CardSkeleton } from "../ui/skeletons";
+import CardFood from "../ui/food/cardFood";
 
 export default function Page({
   searchParams,
@@ -40,9 +41,6 @@ export default function Page({
             Selamat Datang di BANYUMAS!
           </h2>
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-center m-auto w-[95%] md:w-[85%] gap-4">
-          <CardImage />
-        </div>
         <div className="flex flex-col items-center justify-center m-auto w-[95%] md:w-[85%]">
           <h2 className="text-zinc-950 text-3xl font-bold text-center mt-10 mb-5">
             Seputar Banyumas
@@ -61,7 +59,7 @@ export default function Page({
             Selengkapnya
           </Link>
           <div className="flex items-center justify-center m-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 m-auto w-[95%] md:w-full gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 m-auto w-[95%] md:w-full gap-4">
               <DataBanyumas />
             </div>
           </div>
@@ -100,6 +98,23 @@ export default function Page({
         </div>
         <Suspense fallback={<CardSkeleton />}>
           <CardWisata limit={limit} currentPage={currentPage} search={search} />
+        </Suspense>
+      </div>
+      {/* Makanan terbaik di Banyumas */}
+      <div className="w-full mt-10">
+        <div className="flex justify-between items-center m-auto w-[95%] md:w-[85%]">
+          <h3 className="text-black text-[1.18rem] md:text-2xl font-semibold">
+            Makanan Khas Terbaik di Banyumas
+          </h3>
+          <Link
+            href="/food/all"
+            className="text-gray-500 text-base-md md:text-xl font-medium"
+          >
+            Lihat semua
+          </Link>
+        </div>
+        <Suspense fallback={<CardSkeleton />}>
+          <CardFood limit={limit} currentPage={currentPage} search={search} />
         </Suspense>
       </div>
       <Footer />

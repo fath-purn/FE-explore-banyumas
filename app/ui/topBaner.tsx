@@ -40,6 +40,15 @@ const hotel: Baner[] = [
   },
 ];
 
+const makanan: Baner[] = [
+  {
+    alt: "Hotel",
+    src: "https://ik.imagekit.io/fathpurn/hotel.png?updatedAt=1699774721377",
+    title: "Makanan Khas di Banyumas",
+    className: "max-h-[614px]"
+  },
+];
+
 const destinasi: Baner[] = [
   {
     alt: "Destinasi",
@@ -69,6 +78,8 @@ export default function Background() {
       ? wisata
       : pathname === "/hotel"
       ? hotel
+      : pathname === "/food"
+      ? makanan
       : pathname === "/destinasi"
       ? destinasi
       : about;

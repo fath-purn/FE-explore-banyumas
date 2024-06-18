@@ -2,7 +2,7 @@
 
 import Navlink from "@/app/ui/navlink";
 import { LogoFull, Logo } from "@/app/ui/svg-image";
-import { useMediaQuery } from '@mui/material';
+// import { useMediaQuery } from '@mui/material';
 
 export default function Navbar() {
   // const isScreenAbove768px = useMediaQuery('(min-width:881px)');
