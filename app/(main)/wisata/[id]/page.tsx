@@ -116,7 +116,7 @@ export default function Page({
             </div>
             <div className="mt-10 w-fit">
               <Link
-                href={`https://api.whatsapp.com/send?phone=6285155040590&text=Hai%20kak%2C%20aku%20mau%20pesan%20tiket%2C%20apakah%20ada%20kamar%20kosong%3F`}
+                href={`https://api.whatsapp.com/send?phone=6285155040590&text=Hai%20kak%2C%20aku%20mau%20pesan%20tiket%2C%20masuk`}
                 className="bg-green-500 flex flex-row rounded py-3 px-6 items-center"
                 target={"_blank"}
               >
@@ -148,7 +148,7 @@ export default function Page({
           </div>
         </div>
 
-        <div className="w-[90%] md:w-[90%] mt-10">
+        {/* <div className="w-[90%] md:w-[90%] mt-10">
           <h2 className="text-black text-[25px] font-semibold mb-5">
             Hotel serupa terdekat
           </h2>
@@ -191,11 +191,11 @@ export default function Page({
               <p>Tidak ditemukan hotel terdekat</p>
             </div>
           )}
-        </div>
+        </div> */}
 
         <div className="w-[95%] md:w-[90%] mt-0">
           <h2 className="text-black text-[25px] font-semibold mb-5">
-            Hotel terdekat lainnya
+            Hotel terdekat
           </h2>
           <CardHotel limit={limit} currentPage={currentPage} search={search} />
         </div>

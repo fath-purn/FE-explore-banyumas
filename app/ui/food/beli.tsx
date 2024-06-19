@@ -4169,6 +4169,10 @@ const jasaKirim = [
     id: "tiki",
     nama: "TIKI",
   },
+  {
+    id: "cod",
+    nama: "COD (Cash On Delivery)",
+  },
 ];
 
 type Ongkir = {
@@ -4253,16 +4257,22 @@ export default function CardBeli({
 
   const handleCheckOngkir = async () => {
     try {
+      var total;
       setIsLoading(true); // Mengaktifkan loading
-      const data = await getOngkir({
-        origin: "41",
-        destination: selectedCityId,
-        weight: 10,
-        courier: jasa,
-      });
-      setHargaOngkir(data);
-      
-      var total = hargaMakanan + data;
+      if (jasa === "cod") {
+        setHargaOngkir(3000);
+        total = hargaMakanan + 3000;
+      } else {
+        const data = await getOngkir({
+          origin: "41",
+          destination: selectedCityId,
+          weight: 10,
+          courier: jasa,
+        });
+        setHargaOngkir(data);
+
+        total = hargaMakanan + data;
+      }
       setTotalHargaPesananLengkap(total);
       setIsLoading(false);
     } catch (error) {
@@ -4278,7 +4288,7 @@ export default function CardBeli({
   };
 
   return (
-    <div>
+    <div className="">
       <h1 className="font-medium leading-wide text-xl">Alamat anda</h1>
       <div>
         <label
@@ -4362,6 +4372,11 @@ export default function CardBeli({
             ))}
           </select>
         </div>
+        {jasa === "cod" && (
+          <div>
+            <h1 className="text-red-600 text-[16px] mt-1">NB: Jasa pengiriman COD hanya untuk wilayah Purwokerto (Banyumas)</h1>
+          </div>
+        )}
       </div>
       <div>
         <label

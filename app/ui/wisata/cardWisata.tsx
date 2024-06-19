@@ -81,7 +81,8 @@ export default async function TableWisata({
                 alt={wisata.nama}
                 width={237}
                 height={217}
-                className="rounded-lg object-cover max-w-[50%] md:max-w-full max-h-[217px]"
+                // className="rounded-lg object-cover max-w-[50%] md:max-w-full max-h-[217px]"
+                className="rounded-lg object-cover max-w-[50%] md:max-w-full h-[217px]"
               />
               <div className="flex items-center justify-center my-3 ml-1 md:ml-0 w-[50%] md:w-full">
                 <div className="w-[90%]">
