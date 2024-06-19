@@ -27,12 +27,12 @@
         jumlah: dataCount?.wisata ? dataCount?.wisata : 0,
         icon: mdiImageFilterHdr,
       },
-      {
-        id: 3,
-        title: "Kecamatan",
-        jumlah: dataCount?.kecamatan ? dataCount?.kecamatan : 0,
-        icon: mdiMapMarkerRadiusOutline,
-      },
+      // {
+      //   id: 3,
+      //   title: "Kecamatan",
+      //   jumlah: dataCount?.kecamatan ? dataCount?.kecamatan : 0,
+      //   icon: mdiMapMarkerRadiusOutline,
+      // },
       {
         id: 4,
         title: "Makanan",
