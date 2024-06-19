@@ -72,7 +72,7 @@ export default function CardFood({
               />
               <div className="flex items-center justify-center my-3 ml-1 md:ml-0 w-[50%] md:w-full">
                 <div className="w-[90%]">
-                  <h3 className="text-black text-xl font-medium mb-3">
+                  <h3 className="text-black text-xl font-medium mb-3 line-clamp-1">
                     {food.nama}
                   </h3>
                   <h4 className="text-neutral-500 text-[9px] sm:text-[10px] font-light mt-3">
