@@ -64,7 +64,7 @@ export default function Wisata({
             Lihat semua
           </Link>
         </div>
-        <CardWisata limit={limit} currentPage={currentPage} search={search} />
+        <CardWisata limit={limit} currentPage={currentPage+1} search={search} />
       </div>
       {/* Ulasan */}
       <div className="w-full mt-10">

@@ -48,7 +48,7 @@ export default function Hotel({
             Lihat semua
           </Link>
         </div>
-        <CardHotel limit={limit} currentPage={currentPage} search={search} />
+        <CardHotel limit={limit} currentPage={currentPage+1} search={search} />
       </div>
 
       {/* Hotel Populer */}

@@ -64,7 +64,7 @@ export default function Makanan({
             Lihat semua
           </Link>
         </div>
-        <CardFood limit={limit} currentPage={currentPage} search={search} />
+        <CardFood limit={limit} currentPage={currentPage+1} search={search} />
       </div>
 
       {/* Ulasan */}
